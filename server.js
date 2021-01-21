@@ -7,21 +7,13 @@ const app = express();
 require("dotenv").config();
 
 const authRoutes = require("./routes/api/auth");
+const workspaceRoutes = require("./routes/api/workspaces");
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/customers", (req, res) => {
-  const customers = [
-    { id: 1, firstName: "John", lastName: "Doe" },
-    { id: 2, firstName: "Brad", lastName: "Traversy" },
-    { id: 3, firstName: "Mary", lastName: "Swanson" },
-  ];
-
-  res.json(customers);
-});
-
 app.use("/api/auth", authRoutes);
+app.use("/api/workspace", workspaceRoutes);
 
 // Connect to Mongo
 mongoose

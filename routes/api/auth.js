@@ -2,7 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const User = require("../../models/User");
+const { User } = require("../../models/User");
 
 const Response = require("../../utils/Response");
 
@@ -10,7 +10,6 @@ const auth = require("../../middleware/auth");
 
 router.post("/register", (req, res) => {
   let response = new Response("", []);
-  console.log(JSON.stringify(req.body));
   const { name, email, password } = req.body;
 
   // Simple validation
@@ -96,7 +95,7 @@ router.post("/login", (req, res) => {
             response.rows = {
               token,
               user: {
-                id: user.id,
+                id: user._id,
                 name: user.name,
                 email: user.email,
               },

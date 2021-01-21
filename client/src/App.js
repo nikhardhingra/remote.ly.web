@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home";
+import SetupWorkspaces from "./components/SetupWorkspaces/SetupWorkspaces";
 class App extends Component {
   render() {
     return (
@@ -23,6 +24,11 @@ class App extends Component {
               <PublicRoute component={Login} path="/login" exact />
               <PublicRoute component={Register} path="/register" exact />
               <PrivateRoute component={Dashboard} path="/dashboard" exact />
+              <PrivateRoute
+                component={SetupWorkspaces}
+                path="/setup-workspace"
+                exact
+              />
             </Switch>
           </BrowserRouter>
         </div>
