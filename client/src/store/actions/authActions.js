@@ -31,7 +31,9 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 // Register user
-export const register = ({ name, email, password }) => (dispatch) => {
+export const register = ({ name, email, password, experience }) => (
+  dispatch
+) => {
   // headers
   const config = {
     headers: {
@@ -44,6 +46,7 @@ export const register = ({ name, email, password }) => (dispatch) => {
     name,
     email,
     password,
+    experience,
   });
 
   axios

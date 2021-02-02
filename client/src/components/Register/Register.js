@@ -10,6 +10,7 @@ class Register extends Component {
     name: "",
     email: "",
     password: "",
+    experience: "",
     msg: "",
   };
 
@@ -45,12 +46,13 @@ class Register extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, email, password } = this.state;
+    const { name, email, password, experience } = this.state;
 
     const user = {
       name,
       email,
       password,
+      experience,
     };
 
     this.props.register(user);
@@ -59,44 +61,106 @@ class Register extends Component {
   render() {
     return (
       <>
-        <h3>Register Page</h3>
-        {this.props.error.msg.msg ? (
-          <p style={{ color: "red" }}>{this.props.error.msg.msg}</p>
-        ) : null}
-        <form onSubmit={this.onSubmit}>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            onChange={this.onChange}
-          />
-          <br />
-
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            onChange={this.onChange}
-          />
-
-          <br />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            onChange={this.onChange}
-          />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-        <br />
-        <Link to="/login">Login</Link>
+        <Link to="/">
+          <i className="fas fa-home absolute top-5 left-5 text-xl" />
+        </Link>
+        <div
+          className="h-screen flex justify-center items-center"
+          style={{ backgroundColor: "#F5F5FB" }}
+        >
+          <div className="card m-6 bg-white p-12 rounded-lg shadow-lg">
+            <h3 className="font-bold text-xl mb-6">Register</h3>
+            {this.props.error.msg.msg ? (
+              <p style={{ color: "red" }}>{this.props.error.msg.msg}</p>
+            ) : null}
+            <form onSubmit={this.onSubmit}>
+              {/* <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                onChange={this.onChange}
+              />
+              <br /> */}
+              <div class="relative flex w-full flex-wrap items-stretch mb-6">
+                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+                  <i class="fas fa-user"></i>
+                </span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  style={{ backgroundColor: "#EFF0F6" }}
+                  onChange={this.onChange}
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                />
+              </div>
+              <div class="relative flex w-full flex-wrap items-stretch mb-6">
+                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+                  <i class="fas fa-briefcase"></i>
+                </span>
+                <select
+                  name="experience"
+                  placeholder="Experience"
+                  style={{ backgroundColor: "#EFF0F6" }}
+                  onChange={this.onChange}
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                >
+                  <option value="">Experience</option>
+                  <option value="novice">Novice</option>
+                  <option value="expert">Expert</option>
+                </select>
+              </div>
+              <div class="relative flex w-full flex-wrap items-stretch mb-6">
+                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+                  <i class="far fa-envelope"></i>
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  style={{ backgroundColor: "#EFF0F6" }}
+                  onChange={this.onChange}
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                />
+              </div>
+              <div class="relative flex w-full flex-wrap items-stretch">
+                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+                  <i class="fas fa-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  style={{ backgroundColor: "#EFF0F6" }}
+                  onChange={this.onChange}
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 relative rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                />
+              </div>
+              {/* <br /> */}
+              {/* <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                onChange={this.onChange}
+              /> */}
+              <br />
+              <button
+                style={{ backgroundColor: "#0026CA" }}
+                className="w-full py-4 text-white text-sm rounded-2xl"
+                type="submit"
+              >
+                Register
+              </button>
+            </form>
+            <Link to="/login" className="text-xs text-blue-800">
+              Already have an account?
+            </Link>
+          </div>
+        </div>
       </>
     );
   }

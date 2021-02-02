@@ -11,6 +11,10 @@ const UserSchema = Schema({
     required: true,
     unique: true,
   },
+  experience: {
+    type: String, // novice or expert
+    required: true,
+  },
   password: {
     type: String,
     required: true,

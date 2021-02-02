@@ -10,11 +10,11 @@ const auth = require("../../middleware/auth");
 
 router.post("/register", (req, res) => {
   let response = new Response("", []);
-  const { name, email, password } = req.body;
+  const { name, email, password, experience } = req.body;
 
   // Simple validation
-  if (!name | !email | !password) {
-    response.message = "Name, Email and Password are required";
+  if (!name || !email || !password || !experience) {
+    response.message = "Name, Email, Password and Experience are required";
     return res.status(400).json(response);
   }
 
@@ -29,6 +29,7 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         name,
         email,
+        experience,
         password,
       });
 
@@ -47,6 +48,7 @@ router.post("/register", (req, res) => {
                     id: user.id,
                     name: user.name,
                     email: user.email,
+                    experience: user.experience,
                   },
                 };
                 return res.json(response);
