@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../Navbar";
+import Hero from "./Hero";
+import WhatIsHaptics from "./WhatIsHaptics";
+import WhatsIncluded from "./WhatsIncluded";
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <h1>Welcome to Remote.ly</h1>
-        <Link to="/login">Login</Link>
-        <br />
-        <Link to="/register">Register</Link>
+      <div style={{ backgroundColor: "#FDFDFD", minHeight: "100vh" }}>
+        <Navbar />
+        <Hero />
+        <WhatIsHaptics />
+        <WhatsIncluded />
       </div>
     );
   }
