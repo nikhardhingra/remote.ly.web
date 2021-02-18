@@ -15,12 +15,12 @@ const UserSchema = Schema({
     type: String, // novice or expert
     required: true,
   },
+  about: String,
+  skills: [String], // Java, Python, C++, UX/UI, HTML/CSS, Arduino, Processing, Mechanics, Circuits, Conceptual Design, User Testing, Software Testing, Wireframing
+  project_ids: [String],
   password: {
     type: String,
     required: true,
-  },
-  workspace_id: {
-    type: String,
   },
   register_date: {
     type: Date,

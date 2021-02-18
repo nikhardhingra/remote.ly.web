@@ -8,7 +8,7 @@ export default class Home extends Component {
   render() {
     return (
       <div style={{ backgroundColor: "#FDFDFD", minHeight: "100vh" }}>
-        <Navbar />
+        <Navbar isAuthenticated={false} />
         <Hero />
         <WhatIsHaptics />
         <WhatsIncluded />

@@ -1,3 +1,4 @@
+import { loadUser } from "../actions/authActions";
 import {
   USER_LOADED,
   USER_LOADING,
@@ -7,6 +8,10 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  UPDATE_ABOUT_SUCCESS,
+  UPDATE_ABOUT_FAIL,
+  UPDATE_SKILL_SUCCESS,
+  UPDATE_SKILL_FAIL,
 } from "../actions/constants";
 
 const initialState = {
@@ -37,6 +42,19 @@ export default function authReducer(state = initialState, action) {
         ...state,
         ...action.payload,
         isAuthenticated: true,
+        isLoading: false,
+      };
+    case UPDATE_ABOUT_SUCCESS:
+    case UPDATE_SKILL_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        ...action.payload,
+      };
+    case UPDATE_ABOUT_FAIL:
+    case UPDATE_SKILL_FAIL:
+      return {
+        ...state,
         isLoading: false,
       };
     case AUTH_ERROR:

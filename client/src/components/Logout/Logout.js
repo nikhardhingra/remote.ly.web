@@ -12,7 +12,12 @@ export class Logout extends Component {
   render() {
     return (
       <Fragment>
-        <a onClick={this.props.logout} href="#">
+        <a
+          onClick={this.props.logout}
+          className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase hover:shadow-2xl"
+          style={{ backgroundColor: "#7A7CFF" }}
+          href="#"
+        >
           Logout
         </a>
       </Fragment>

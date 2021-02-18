@@ -1,13 +1,22 @@
 import React from "react";
+import Logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { Logout } from "./Logout/Logout";
 
-export default function Navbar() {
+export default function Navbar({ isAuthenticated }) {
+  console.log(isAuthenticated);
   return (
     <div className="navbar md:flex justify-between items-center p-6">
       <div className="flex md:justify-evenly justify-between items-center">
-        <h1 className="logo text-3xl font-semibold">
+        {/* <h1 className="logo text-3xl font-semibold">
           Remote<span style={{ color: "#FF7C5D" }}>.</span>ly
-        </h1>
+        </h1> */}
+        <img
+          src={Logo}
+          alt="Logo"
+          className="w-52"
+          style={{ backgroundColor: "#FDFDFD" }}
+        />
         <div
           className="block md:hidden cursor-pointer"
           onClick={() => {
@@ -30,32 +39,44 @@ export default function Navbar() {
           </svg>
         </div>
       </div>
-      {/* <div
-        id="nav-items"
-        className="hidden md:block md:flex md:justify-between"
-      > */}
       <ul className="hidden md:block nav-item md:flex">
         <li className="p-4">Home</li>
         <li className="p-4">Features</li>
         <li className="p-4">About Us</li>
       </ul>
       <div className="nav-item hidden md:block">
-        <Link to="/register">
-          <button
-            className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase"
-            style={{ backgroundColor: "#0026CA" }}
-          >
-            Sign Up
-          </button>
-        </Link>
-        <Link to="/login">
-          <button
-            className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase"
-            style={{ backgroundColor: "#7A7CFF" }}
-          >
-            Log In
-          </button>
-        </Link>
+        {!isAuthenticated ? (
+          <>
+            <Link to="/register">
+              <button
+                className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase hover:shadow-2xl"
+                style={{ backgroundColor: "#0026CA" }}
+              >
+                Sign Up
+              </button>
+            </Link>
+            <Link to="/login">
+              <button
+                className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase hover:shadow-2xl"
+                style={{ backgroundColor: "#7A7CFF" }}
+              >
+                Log In
+              </button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/dashboard">
+              <button
+                className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase hover:shadow-2xl"
+                style={{ backgroundColor: "#0026CA" }}
+              >
+                Dashboard
+              </button>
+            </Link>
+            <Logout />
+          </>
+        )}
       </div>
       {/* </div> */}
     </div>

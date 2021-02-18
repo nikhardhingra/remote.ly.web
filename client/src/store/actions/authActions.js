@@ -11,10 +11,15 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  UPDATE_ABOUT_SUCCESS,
+  UPDATE_ABOUT_FAIL,
+  UPDATE_SKILL_SUCCESS,
+  UPDATE_SKILL_FAIL,
 } from "./constants";
 
 // Check token and load user
 export const loadUser = () => (dispatch, getState) => {
+  console.log(`loaduser called`);
   dispatch({ type: USER_LOADING });
 
   axios
@@ -114,10 +119,89 @@ export const logout = () => (dispatch) => {
   });
 };
 
+export const updateAbout = ({ about }) => (dispatch, getState) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  };
+
+  // Request body
+  const body = JSON.stringify({
+    about,
+  });
+
+  axios
+    .post("/api/auth/about", body, config)
+    .then((res) => {
+      console.log(res.data.rows);
+      dispatch({
+        type: UPDATE_ABOUT_SUCCESS,
+        payload: { user: res.data.rows },
+      });
+    })
+    .catch((err) => {
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          "UPDATE_ABOUT_FAIL"
+        )
+      );
+      dispatch({
+        type: UPDATE_ABOUT_FAIL,
+      });
+    });
+};
+
+/**
+ * @params
+ *  -> skills: [String]
+ */
+export const updateSkill = ({ skills }) => (dispatch, getState) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  };
+
+  // Request body
+  const body = JSON.stringify({
+    skills,
+  });
+
+  axios
+    .post("/api/auth/skills", body, config)
+    .then((res) => {
+      console.log(res.data.rows);
+      dispatch({
+        type: UPDATE_SKILL_SUCCESS,
+        payload: { user: res.data.rows },
+      });
+    })
+    .catch((err) => {
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          "UPDATE_SKILL_FAIL"
+        )
+      );
+      dispatch({
+        type: UPDATE_SKILL_FAIL,
+      });
+    });
+};
+
 // Setup config/headers in token
 export const tokenConfig = (getState) => {
   // Get token from localStorage
-  const token = getState().auth.token;
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  console.log(token);
 
   // Headers
   const config = {

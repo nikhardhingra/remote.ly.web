@@ -116,6 +116,41 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.post("/about", auth, (req, res) => {
+  let response = new Response("", []);
+  User.updateOne({ _id: req.user.id }, { $set: { about: req.body.about } })
+    .then(() => {
+      User.findById(req.user.id)
+        .then((user) => {
+          response.rows = user;
+          return res.json(response);
+        })
+        .catch((err) => {
+          response.message = `Internal Server Error: ${error}`;
+          return res.status(500).json(response);
+        });
+    })
+    .catch((err) => {});
+});
+
+router.post("/skills", auth, (req, res) => {
+  console.log(req.body.skills);
+  let response = new Response("", []);
+  User.updateOne({ _id: req.user.id }, { $set: { skills: req.body.skills } })
+    .then(() => {
+      User.findById(req.user.id)
+        .then((user) => {
+          response.rows = user;
+          return res.json(response);
+        })
+        .catch((err) => {
+          response.message = `Internal Server Error: ${error}`;
+          return res.status(500).json(response);
+        });
+    })
+    .catch((err) => {});
+});
+
 router.get("/user", auth, (req, res) => {
   let response = new Response("", []);
   User.findById(req.user.id)

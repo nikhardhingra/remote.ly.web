@@ -7,13 +7,13 @@ const app = express();
 require("dotenv").config();
 
 const authRoutes = require("./routes/api/auth");
-const workspaceRoutes = require("./routes/api/workspaces");
+const projectRoutes = require("./routes/api/projects");
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/workspace", workspaceRoutes);
+app.use("/api/projects", projectRoutes);
 
 // Connect to Mongo
 mongoose
