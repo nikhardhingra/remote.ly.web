@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import GettingStartedImage from "../../assets/images/gettingstarted.png";
 import ProfileImage from "../../assets/images/profile.png";
 import SearchImage from "../../assets/images/searchforexperts.png";
+import FAQImage from "../../assets/images/undraw_Questions_re_1fy7.png";
 import Navbar from "../Navbar";
 import DashboardCard from "./DashboardCard";
 
@@ -17,7 +18,21 @@ class Dashboard extends Component {
             <h1 className="text-4xl text-blue-800">
               Welcome, {this.props.user.name.split(" ")[0]}!
             </h1>
-            <div className="card-grid flex md:flex-row flex-col justify-between mt-6 w-full">
+            <div className="card-grid grid grid-cols-1 md:grid-cols-2 justify-between mt-6 w-full">
+              <Link to="/getting-started">
+                <DashboardCard
+                  image={GettingStartedImage}
+                  gradient="from-blue-300 to-green-300"
+                  heading="Getting Started"
+                  text="Navigate through key phases of a haptics project life cycle and get help along the way"
+                />
+              </Link>
+              <DashboardCard
+                image={SearchImage}
+                gradient="from-purple-500 to-green-300"
+                heading="Connect"
+                text="Connect with hapticians in the field and browse different types of projects for ideas"
+              />
               <Link to="/profile">
                 <DashboardCard
                   image={ProfileImage}
@@ -27,16 +42,10 @@ class Dashboard extends Component {
                 />
               </Link>
               <DashboardCard
-                image={SearchImage}
-                gradient="from-purple-500 to-green-300"
-                heading="Search for experts"
-                text="Connect with experts in the field and browse different types of projects for ideas"
-              />
-              <DashboardCard
-                image={GettingStartedImage}
+                image={FAQImage}
                 gradient="from-blue-300 to-green-300"
-                heading="Getting Started"
-                text="Navigate through key phases of a haptics project life cycle and get help along the way"
+                heading="Frequently Asked Questions"
+                text="Find answers to the most commonly asked questions"
               />
             </div>
           </div>

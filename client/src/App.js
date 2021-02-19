@@ -4,6 +4,9 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
 import Dashboard from "./components/Dashboard/Dashboard";
+import GettingStarted from "./components/GettingStarted/GettingStarted";
+import WhatIsHaptics from "./components/GettingStarted/WhatIsHaptics";
+import ProblemSpace from "./components/GettingStarted/ProblemSpace";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
@@ -12,6 +15,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import store from "./store";
 import { loadUser } from "./store/actions/authActions";
+import HaplyDevKit from "./components/GettingStarted/HaplyDevKit";
 
 export default function App() {
   useEffect(() => {
@@ -28,6 +32,26 @@ export default function App() {
             <PublicRoute component={Register} path="/register" exact />
             <PrivateRoute component={Dashboard} path="/dashboard" exact />
             <PrivateRoute component={Profile} path="/profile" exact />
+            <PrivateRoute
+              component={GettingStarted}
+              path="/getting-started"
+              exact
+            />
+            <PrivateRoute
+              component={WhatIsHaptics}
+              path="/getting-started/what-is-haptics"
+              exact
+            />
+            <PrivateRoute
+              component={ProblemSpace}
+              path="/getting-started/problem-space"
+              exact
+            />
+            <PrivateRoute
+              component={HaplyDevKit}
+              path="/getting-started/haply-development-kit"
+              exact
+            />
           </Switch>
         </BrowserRouter>
       </div>

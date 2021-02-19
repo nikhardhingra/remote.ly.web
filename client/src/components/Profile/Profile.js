@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import Navbar from "../Navbar";
 import AboutModal from "./AboutModal";
 import SkillModal from "./SkillModal";
+import ProjectModal from "./ProjectModal";
+import ContactInfoModal from "./ContactInfoModal";
+import { getAllProjects } from "../../store/actions/projectActions";
 
 class Profile extends Component {
   constructor(props) {
@@ -10,7 +13,19 @@ class Profile extends Component {
     this.state = {
       showAboutModal: false,
       showSkillModal: false,
+      showProjectModal: false,
+      showContactInfoModal: false,
+      selectedProject: null,
     };
+  }
+  onEditProjectIconClick = (project) => {
+    this.setState({
+      selectedProject: project,
+      showProjectModal: true,
+    });
+  };
+  componentDidMount() {
+    this.props.getAllProjects();
   }
   render() {
     return (
@@ -28,7 +43,12 @@ class Profile extends Component {
                   {this.props.user.experience.toUpperCase()}
                 </div>
                 <div className="cards">
-                  <div className="rounded py-4 px-2 border border-purple-500 mb-2 bg-white text-center cursor-pointer">
+                  <div
+                    className="rounded py-4 px-2 border border-purple-500 mb-2 bg-white text-center cursor-pointer"
+                    onClick={() =>
+                      this.setState({ showContactInfoModal: true })
+                    }
+                  >
                     <i className="fas fa-phone inline mx-4" />
                     <span className="mr-4">CONTACT INFO</span>
                   </div>
@@ -43,7 +63,7 @@ class Profile extends Component {
                 </div>
               </div>
               <div className="about mt-10 p-10 mb-24">
-                <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex flex-row justify-between items-center">
                   <h4 className="font-bold">About</h4>
                   <i
                     className="fas fa-pen"
@@ -59,17 +79,69 @@ class Profile extends Component {
         </div>
         <div className="bg-white container p-6">
           {this.props.user && this.props.user.experience && (
-            <div className="skills shadow-xl p-10 mt-10 mb-24">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <h4 className="font-bold">Skills</h4>
-                <i
-                  className="fas fa-pen"
-                  onClick={() => {
-                    this.setState({ showSkillModal: true });
-                  }}
-                ></i>
+            <div>
+              <div className="skills shadow-xl p-10 mt-10">
+                <div className="flex flex-row justify-between items-center">
+                  <h4 className="font-bold">Skills</h4>
+                  <i
+                    className="fas fa-pen"
+                    onClick={() => {
+                      this.setState({ showSkillModal: true });
+                    }}
+                  ></i>
+                </div>
+                <div className="mt-4">
+                  {this.props.user.skills && this.props.user.skills.length > 0
+                    ? this.props.user.skills.map((skill, idx) => (
+                        <button
+                          class="py-2 cursor-text px-4 shadow-md no-underline rounded-full bg-gray-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none mr-2"
+                          key={idx}
+                        >
+                          {skill}
+                        </button>
+                      ))
+                    : "Add new skills related to Haptics"}
+                </div>
               </div>
-              <p>{this.props.user.about}</p>
+              <div className="projects shadow-xl p-10 mt-10 mb-24">
+                <div className="flex flex-row justify-between items-center">
+                  <h4 className="font-bold">Projects</h4>
+                  <i
+                    className="fas fa-plus"
+                    onClick={() => {
+                      this.setState({ showProjectModal: true });
+                    }}
+                  ></i>
+                </div>
+                <div className="mt-4">
+                  {this.props.projects.length > 0
+                    ? this.props.projects.slice(0, 3).map((project) => (
+                        <div className="mt-4">
+                          <div className="flex justify-between">
+                            <h1 className="font-bold text-xl">
+                              {project.name}
+                            </h1>
+                            <i
+                              className="fas fa-pen"
+                              onClick={() =>
+                                this.onEditProjectIconClick(project)
+                              }
+                            />
+                          </div>
+                          <h3 className="text-sm">{project.category}</h3>
+                          <p className="mt-2 text-gray-400 italic">
+                            {project.description}
+                          </p>
+                        </div>
+                      ))
+                    : "Add new projects"}
+                </div>
+                {this.props.projects.length > 3 && (
+                  <div className="text-blue-600 mt-6">
+                    <a href="#">Show more</a>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -81,6 +153,19 @@ class Profile extends Component {
         {this.state.showSkillModal && (
           <SkillModal
             toggleModal={() => this.setState({ showSkillModal: false })}
+          />
+        )}
+        {this.state.showProjectModal && (
+          <ProjectModal
+            project={this.state.selectedProject}
+            toggleModal={() =>
+              this.setState({ showProjectModal: false, selectedProject: null })
+            }
+          />
+        )}
+        {this.state.showContactInfoModal && (
+          <ContactInfoModal
+            toggleModal={() => this.setState({ showContactInfoModal: false })}
           />
         )}
       </>
@@ -165,6 +250,7 @@ class Profile extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.auth.user,
+  projects: state.projects.projects,
 });
 
-export default connect(mapStateToProps, {})(Profile);
+export default connect(mapStateToProps, { getAllProjects })(Profile);

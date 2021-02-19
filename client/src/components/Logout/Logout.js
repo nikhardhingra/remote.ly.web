@@ -3,23 +3,26 @@ import { connect } from "react-redux";
 import { logout } from "../../store/actions/authActions";
 import PropTypes from "prop-types";
 
-export class Logout extends Component {
+class Logout extends Component {
   static propTypes = {
-    logout: PropTypes.func.isRequired,
+    logout: PropTypes.func,
     isAuthenticated: PropTypes.bool,
+  };
+
+  logout = () => {
+    this.props.logout();
   };
 
   render() {
     return (
       <Fragment>
-        <a
-          onClick={this.props.logout}
+        <button
+          onClick={this.logout}
           className="m-2 px-4 py-2 text-white rounded-md shadow-lg uppercase hover:shadow-2xl"
           style={{ backgroundColor: "#7A7CFF" }}
-          href="#"
         >
           Logout
-        </a>
+        </button>
       </Fragment>
     );
   }

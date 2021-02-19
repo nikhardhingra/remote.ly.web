@@ -1,10 +1,9 @@
 import React from "react";
 import Logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { Logout } from "./Logout/Logout";
+import Logout from "./Logout/Logout";
 
 export default function Navbar({ isAuthenticated }) {
-  console.log(isAuthenticated);
   return (
     <div className="navbar md:flex justify-between items-center p-6">
       <div className="flex md:justify-evenly justify-between items-center">
@@ -39,11 +38,31 @@ export default function Navbar({ isAuthenticated }) {
           </svg>
         </div>
       </div>
-      <ul className="hidden md:block nav-item md:flex">
-        <li className="p-4">Home</li>
-        <li className="p-4">Features</li>
-        <li className="p-4">About Us</li>
-      </ul>
+      {!isAuthenticated && (
+        <ul className="hidden md:block nav-item md:flex">
+          <li className="p-4">Home</li>
+          <li
+            className="p-4"
+            onClick={() => {
+              document
+                .getElementById("features")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Features
+          </li>
+          <li
+            className="p-4"
+            onClick={() => {
+              document
+                .getElementById("about")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            About Us
+          </li>
+        </ul>
+      )}
       <div className="nav-item hidden md:block">
         {!isAuthenticated ? (
           <>

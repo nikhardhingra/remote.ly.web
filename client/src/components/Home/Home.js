@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import Hero from "./Hero";
 import WhatIsHaptics from "./WhatIsHaptics";
 import WhatsIncluded from "./WhatsIncluded";
+import AboutUs from "./AboutUs";
 
 export default class Home extends Component {
   render() {
@@ -12,6 +13,7 @@ export default class Home extends Component {
         <Hero />
         <WhatIsHaptics />
         <WhatsIncluded />
+        <AboutUs />
       </div>
     );
   }

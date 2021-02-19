@@ -6,7 +6,12 @@ const DashboardCard = ({ image, alt, heading, text, gradient }) => {
       <div
         className={`image-container bg-gradient-to-br ${gradient} rounded-lg p-6`}
       >
-        <img className="w-full" src={image} alt={alt} />
+        <img
+          className="w-full"
+          style={{ backgroundColor: "transparent" }}
+          src={image}
+          alt={alt}
+        />
       </div>
       <div className="content p-4">
         <h2 className="text-2xl font-bold">{heading}</h2>

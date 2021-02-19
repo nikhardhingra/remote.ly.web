@@ -15,6 +15,8 @@ import {
   UPDATE_ABOUT_FAIL,
   UPDATE_SKILL_SUCCESS,
   UPDATE_SKILL_FAIL,
+  UPDATE_CONTACT_SUCCESS,
+  UPDATE_CONTACT_FAIL,
 } from "./constants";
 
 // Check token and load user
@@ -28,6 +30,7 @@ export const loadUser = () => (dispatch, getState) => {
       dispatch({ type: USER_LOADED, payload: res.data.rows });
     })
     .catch((err) => {
+      console.log(err);
       dispatch(
         returnErrors({ msg: err.response.data.message }, err.response.status)
       );
@@ -114,6 +117,7 @@ export const login = ({ email, password }) => (dispatch) => {
 };
 
 export const logout = () => (dispatch) => {
+  console.log(`logging out`);
   dispatch({
     type: LOGOUT_SUCCESS,
   });
@@ -152,6 +156,47 @@ export const updateAbout = ({ about }) => (dispatch, getState) => {
       );
       dispatch({
         type: UPDATE_ABOUT_FAIL,
+      });
+    });
+};
+
+export const updateContactInfo = ({ github, linkedin }) => (
+  dispatch,
+  getState
+) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  };
+
+  // Request body
+  const body = JSON.stringify({
+    github,
+    linkedin,
+  });
+
+  axios
+    .post("/api/auth/contact", body, config)
+    .then((res) => {
+      console.log(res.data.rows);
+      dispatch({
+        type: UPDATE_CONTACT_SUCCESS,
+        payload: { user: res.data.rows },
+      });
+    })
+    .catch((err) => {
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          "UPDATE_CONTACT_FAIL"
+        )
+      );
+      dispatch({
+        type: UPDATE_CONTACT_FAIL,
       });
     });
 };

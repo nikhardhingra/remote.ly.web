@@ -12,6 +12,8 @@ import {
   UPDATE_ABOUT_FAIL,
   UPDATE_SKILL_SUCCESS,
   UPDATE_SKILL_FAIL,
+  UPDATE_CONTACT_SUCCESS,
+  UPDATE_CONTACT_FAIL,
 } from "../actions/constants";
 
 const initialState = {
@@ -46,6 +48,7 @@ export default function authReducer(state = initialState, action) {
       };
     case UPDATE_ABOUT_SUCCESS:
     case UPDATE_SKILL_SUCCESS:
+    case UPDATE_CONTACT_SUCCESS:
       return {
         ...state,
         isLoading: false,
@@ -53,6 +56,7 @@ export default function authReducer(state = initialState, action) {
       };
     case UPDATE_ABOUT_FAIL:
     case UPDATE_SKILL_FAIL:
+    case UPDATE_CONTACT_FAIL:
       return {
         ...state,
         isLoading: false,

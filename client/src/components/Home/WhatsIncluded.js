@@ -5,12 +5,12 @@ import GetStarted from "./GetStarted";
 
 export default function WhatIsHaptics() {
   return (
-    <div className="p-6">
+    <div className="p-6" id="features">
       <h1
         className="text-5xl text-center lg:text-left"
         style={{ color: "#091133" }}
       >
-        What's included?
+        Features
       </h1>
       <LearnFromExperts />
       <GetStarted />
