@@ -21,6 +21,7 @@ import Connect from "./components/Connect/Connect";
 import OtherUserProfile from "./components/Profile/OtherUserProfile";
 import FAQ from "./components/FAQ/FAQ";
 import Remotely from "./components/FAQ/Remotely";
+import ListAllProjects from "./components/ListAllProjects";
 import AboutHaptics from "./components/FAQ/AboutHaptics";
 
 export default function App() {
@@ -41,6 +42,11 @@ export default function App() {
             <PrivateRoute component={Dashboard} path="/dashboard" exact />
             <PrivateRoute component={FAQ} path="/faq" exact />
             <PrivateRoute component={Remotely} path="/faq/remote.ly" exact />
+            <PrivateRoute
+              component={ListAllProjects}
+              path="/projects/:user_id"
+              exact
+            />
             <PrivateRoute
               component={AboutHaptics}
               path="/faq/about-haptics"

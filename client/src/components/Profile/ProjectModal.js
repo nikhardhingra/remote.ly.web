@@ -37,17 +37,14 @@ class ProjectModal extends Component {
       console.log(this.props.project._id);
       this.setState({
         name: this.props.project.name,
-        category: {
-          label: this.props.project.category,
-          value: this.props.project.category,
-        },
+        category: this.props.project.category.map((singleCategory) => ({
+          label: singleCategory,
+          value: singleCategory,
+        })),
         description: this.props.project.description,
         toBeEdited: true,
       });
     }
-    // this.setState({
-    //   projects: this.props.projects,
-    // });
   }
   handleSubmit = async (e) => {
     const categories = this.state.category.map((category) => category.value);

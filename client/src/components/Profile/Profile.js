@@ -1,12 +1,13 @@
-import { connect } from "react-redux";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { loadUser } from "../../store/actions/authActions";
+import { getAllProjects } from "../../store/actions/projectActions";
 import Navbar from "../Navbar";
 import AboutModal from "./AboutModal";
-import SkillModal from "./SkillModal";
-import ProjectModal from "./ProjectModal";
 import ContactInfoModal from "./ContactInfoModal";
-import { getAllProjects } from "../../store/actions/projectActions";
-import { loadUser } from "../../store/actions/authActions";
+import ProjectModal from "./ProjectModal";
+import SkillModal from "./SkillModal";
 
 class Profile extends Component {
   constructor(props) {
@@ -150,7 +151,9 @@ class Profile extends Component {
                 </div>
                 {this.props.projects.length > 3 && (
                   <div className="text-blue-600 mt-6">
-                    <a href="#">Show more</a>
+                    <Link to={`/projects/${this.props.user._id}`}>
+                      Show more
+                    </Link>
                   </div>
                 )}
               </div>

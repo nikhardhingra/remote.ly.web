@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function FAQ() {
   return (
     <>
-      <Navbar />
+      <Navbar isAuthenticated={true} />
       <div className="bg-gray-100 p-6 flex justify-evenly">
         <Link to="/faq/remote.ly">
           <DashboardCard

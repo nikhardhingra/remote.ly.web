@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import Navbar from "../Navbar";
 import ContactInfoNotEditModal from "./ContactInfoNotEditModal";
@@ -96,12 +97,6 @@ class OtherUserProfile extends Component {
                             <h1 className="font-bold text-xl">
                               {project.name}
                             </h1>
-                            <i
-                              className="fas fa-pen"
-                              onClick={() =>
-                                this.onEditProjectIconClick(project)
-                              }
-                            />
                           </div>
                           <h3 className="text-sm">
                             {project.category.map((singleCategory, idx) => (
@@ -122,7 +117,9 @@ class OtherUserProfile extends Component {
                 </div>
                 {this.props.projects.length > 3 && (
                   <div className="text-blue-600 mt-6">
-                    <a href="#">Show more</a>
+                    <Link to={`/projects/${this.state.user._id}`}>
+                      Show more
+                    </Link>
                   </div>
                 )}
               </div>

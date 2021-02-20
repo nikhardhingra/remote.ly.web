@@ -144,6 +144,7 @@ export const listProjects = (user_id) => (dispatch, getState) => {
       });
     })
     .catch((err) => {
+      console.log(err);
       dispatch(
         returnErrors(
           { msg: err.response.data.message },

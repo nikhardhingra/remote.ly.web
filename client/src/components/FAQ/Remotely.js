@@ -5,7 +5,7 @@ import Navbar from "../Navbar";
 export default function Remotely() {
   return (
     <>
-      <Navbar />
+      <Navbar isAuthenticated={true} />
       <div className="bg-gray-100 p-6">
         <div className="flex">
           <Link to="/faq" className="cursor-pointer mr-2">
