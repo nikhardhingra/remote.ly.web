@@ -50,17 +50,18 @@ class ProjectModal extends Component {
     // });
   }
   handleSubmit = async (e) => {
+    const categories = this.state.category.map((category) => category.value);
     if (this.state.toBeEdited) {
       await this.props.updateProject({
         project_id: this.props.project._id,
         name: this.state.name,
-        category: this.state.category.value,
+        category: categories,
         description: this.state.description,
       });
     } else {
       await this.props.addProject({
         name: this.state.name,
-        category: this.state.category.value,
+        category: categories,
         description: this.state.description,
       });
     }
@@ -123,7 +124,8 @@ class ProjectModal extends Component {
                       onChange={(e) => this.setState({ bio: e.target.value })}
                     /> */}
                     <Select
-                      className="basic-single"
+                      isMulti
+                      className="basic-multi-select"
                       classNamePrefix="select"
                       options={options}
                       value={this.state.category}
@@ -134,6 +136,20 @@ class ProjectModal extends Component {
                         menuPortal: (base) => ({ ...base, zIndex: 9999 }),
                       }}
                     />
+                    {/* <Select
+                      isMulti
+                      value={this.state.skills}
+                      name="skills"
+                      options={options}
+                      onChange={(value) => this.setState({ skills: value })}
+                      className="basic-multi-select"
+                      classNamePrefix="select"
+                      menuPosition={"fixed"}
+                      menuPortalTarget={document.body}
+                      styles={{
+                        menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                      }}
+                    /> */}
                   </div>
                   <div className="mt-2">
                     <label htmlFor="bio" className="block">

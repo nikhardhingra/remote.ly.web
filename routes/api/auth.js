@@ -8,6 +8,56 @@ const Response = require("../../utils/Response");
 
 const auth = require("../../middleware/auth");
 
+router.get("/user-item", (req, res) => {
+  let response = new Response("", []);
+  const { user_id } = req.query;
+
+  User.findById(user_id, function (err, user) {
+    if (err) {
+      response.message = `Internal Server Error: ${err.toString()}`;
+      return res.status(500).json(response);
+    }
+    response.rows = user;
+    return res.json(response);
+  });
+});
+
+router.get("/search", (req, res) => {
+  let response = new Response("", []);
+  let { name, experience, skill } = req.query;
+  console.log(skill);
+
+  if (name) {
+    User.find({ name: new RegExp(name, "i") }, function (err, users) {
+      if (err) {
+        response.message = `Internal Server Error: ${err.toString()}`;
+        return res.status(500).json(response);
+      }
+      response.rows = users;
+      return res.json(response);
+    });
+  } else if (experience) {
+    User.find({ experience }, function (err, users) {
+      if (err) {
+        response.message = `Internal Server Error: ${err.toString()}`;
+        return res.status(500).json(response);
+      }
+      response.rows = users;
+      return res.json(response);
+    });
+  } else if (skill) {
+    console.log({ skill });
+    User.find({ skills: skill }, function (err, users) {
+      if (err) {
+        response.message = `Internal Server Error: ${err.toString()}`;
+        return res.status(500).json(response);
+      }
+      response.rows = users;
+      return res.json(response);
+    });
+  }
+});
+
 router.post("/register", (req, res) => {
   let response = new Response("", []);
   const { name, email, password, experience } = req.body;

@@ -1,10 +1,44 @@
 const router = require("express").Router();
 
 const Project = require("../../models/Project");
+const { User } = require("../../models/User");
 
 const Response = require("../../utils/Response");
 
 const auth = require("../../middleware/auth");
+
+router.get("/search", (req, res) => {
+  let response = new Response("", []);
+  const { category } = req.query;
+
+  console.log(category);
+
+  Project.find({ category }, function (err, projects) {
+    if (err) {
+      response.message = `Internal Server Error: ${err.toString()}`;
+      return res.status(500).json(response);
+    }
+    responseProjects = [];
+    let projectsProcessed = 0;
+    projects.forEach((project) => {
+      User.findById(project.user_id, function (err, user) {
+        if (err) {
+          response.message = `Internal Server Error: ${err.toString()}`;
+          return res.status(500).json(response);
+        }
+        responseProjects.push({
+          ...project._doc,
+          user,
+        });
+        projectsProcessed++;
+        if (projectsProcessed === projects.length) {
+          response.rows = responseProjects;
+          return res.json(response);
+        }
+      });
+    });
+  });
+});
 
 router.get("/", auth, (req, res) => {
   let response = new Response("", []);
@@ -20,12 +54,27 @@ router.get("/", auth, (req, res) => {
   });
 });
 
+router.get("/list", (req, res) => {
+  let response = new Response("", []);
+  const { user_id } = req.query;
+
+  Project.find({ user_id }, function (err, docs) {
+    if (err !== null) {
+      response.message = `Internal Server Error: ${err.toString()}`;
+      return res.status(500).json(response);
+    }
+    response.rows = docs;
+    return res.json(response);
+  });
+});
+
 router.post("/", auth, (req, res) => {
   let response = new Response("", []);
   const { name, category, description } = req.body;
+  console.log(category);
   const user_id = req.user.id;
 
-  if (!name || !category || !description) {
+  if (!name || !(category.length > 0) || !description) {
     response.message = "Name, Category and Description are required";
     return res.status(400).json(response);
   }
@@ -54,7 +103,7 @@ router.put("/", auth, (req, res) => {
   const { name, category, description, project_id } = req.body;
   const user_id = req.user.id;
 
-  if (!name || !category || !description) {
+  if (!name || !(category.length > 0) || !description) {
     response.message = "Name, Category and Description are required";
     return res.status(400).json(response);
   }

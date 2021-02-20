@@ -6,6 +6,7 @@ import SkillModal from "./SkillModal";
 import ProjectModal from "./ProjectModal";
 import ContactInfoModal from "./ContactInfoModal";
 import { getAllProjects } from "../../store/actions/projectActions";
+import { loadUser } from "../../store/actions/authActions";
 
 class Profile extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Profile extends Component {
     });
   };
   componentDidMount() {
+    this.props.loadUser();
     this.props.getAllProjects();
   }
   render() {
@@ -32,7 +34,7 @@ class Profile extends Component {
       <>
         <div className="bg-gray-100">
           <Navbar isAuthenticated={true} />
-          {this.props.user && this.props.user.experience && (
+          {this.props.user && (
             <div className="container p-6 w-full">
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
               <div className="user-profile-top flex flex-col md:flex-row justify-between items-center">
@@ -40,7 +42,8 @@ class Profile extends Component {
                   <h2 className="text-3xl m-0 p-0 font-bold">
                     {this.props.user.name}
                   </h2>
-                  {this.props.user.experience.toUpperCase()}
+                  {this.props.user.experience &&
+                    this.props.user.experience.toUpperCase()}
                 </div>
                 <div className="cards">
                   <div
@@ -128,7 +131,16 @@ class Profile extends Component {
                               }
                             />
                           </div>
-                          <h3 className="text-sm">{project.category}</h3>
+                          <h3 className="text-sm">
+                            {project.category.map((singleCategory, idx) => (
+                              <button
+                                class="py-2 cursor-text px-4 shadow-md no-underline rounded-full bg-gray-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none mr-2"
+                                key={idx}
+                              >
+                                {singleCategory}
+                              </button>
+                            ))}
+                          </h3>
                           <p className="mt-2 text-gray-400 italic">
                             {project.description}
                           </p>
@@ -253,4 +265,4 @@ const mapStateToProps = (state) => ({
   projects: state.projects.projects,
 });
 
-export default connect(mapStateToProps, { getAllProjects })(Profile);
+export default connect(mapStateToProps, { getAllProjects, loadUser })(Profile);

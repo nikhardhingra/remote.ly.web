@@ -2,12 +2,15 @@ import {
   ADD_PROJECT_FAIL,
   ADD_PROJECT_SUCCESS,
   GET_ALL_PROJECTS_SUCCESS,
+  GET_SEARCH_PROJECTS,
+  LIST_ALL_PROJECTS_SUCCESS,
   UPDATE_PROJECT_FAIL,
   UPDATE_PROJECT_SUCCESS,
 } from "../actions/constants";
 
 const initialState = {
   projects: [],
+  searchProjects: [],
 };
 
 export default function projectReducer(state = initialState, action) {
@@ -35,6 +38,16 @@ export default function projectReducer(state = initialState, action) {
             return project;
           }),
         ],
+      };
+    case GET_SEARCH_PROJECTS:
+      return {
+        ...state,
+        searchProjects: action.payload,
+      };
+    case LIST_ALL_PROJECTS_SUCCESS:
+      return {
+        ...state,
+        projects: action.payload,
       };
     case UPDATE_PROJECT_FAIL:
       return state;

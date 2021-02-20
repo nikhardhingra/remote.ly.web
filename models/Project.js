@@ -11,7 +11,7 @@ const ProjectSchema = Schema({
     required: true,
   },
   category: {
-    type: String, // Geology, Molecular Chemistry, Physics, Biology, Robotics, Medicine, Mobile Devices, Video Games, Health and Wellness, Aerospace
+    type: [String], // Geology, Molecular Chemistry, Physics, Biology, Robotics, Medicine, Mobile Devices, Video Games, Health and Wellness, Aerospace
     required: true,
   },
   description: {

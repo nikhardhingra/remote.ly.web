@@ -17,6 +17,7 @@ import {
   UPDATE_SKILL_FAIL,
   UPDATE_CONTACT_SUCCESS,
   UPDATE_CONTACT_FAIL,
+  GET_SEARCH_USERS,
 } from "./constants";
 
 // Check token and load user
@@ -120,6 +121,40 @@ export const logout = () => (dispatch) => {
   console.log(`logging out`);
   dispatch({
     type: LOGOUT_SUCCESS,
+  });
+};
+
+export const searchUsers = ({ name, experience, skill, type }) => (
+  dispatch,
+  getState
+) => {
+  let queryParam;
+  let queryValue;
+  if (type === "name") {
+    queryParam = "name";
+    queryValue = name;
+  } else if (type === "experience") {
+    queryParam = "experience";
+    queryValue = experience;
+  } else {
+    queryParam = "skill";
+    queryValue = skill;
+  }
+
+  axios
+    .get(`/api/auth/search?${queryParam}=${queryValue}`, tokenConfig(getState))
+    .then((res) => {
+      dispatch({ type: GET_SEARCH_USERS, payload: res.data.rows });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const clearSearchUsers = () => (dispatch) => {
+  dispatch({
+    type: GET_SEARCH_USERS,
+    payload: [],
   });
 };
 

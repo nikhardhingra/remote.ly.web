@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import MyLink from "./MyLink";
 
-export default function ProblemSpace() {
+export default function ConfigureProcessing() {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   return (
     <div>

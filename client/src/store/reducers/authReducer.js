@@ -14,9 +14,11 @@ import {
   UPDATE_SKILL_FAIL,
   UPDATE_CONTACT_SUCCESS,
   UPDATE_CONTACT_FAIL,
+  GET_SEARCH_USERS,
 } from "../actions/constants";
 
 const initialState = {
+  searchUsers: [],
   token: localStorage.getItem("remotelytoken"),
   isAuthenticated: null,
   isLoading: false,
@@ -46,6 +48,11 @@ export default function authReducer(state = initialState, action) {
         isAuthenticated: true,
         isLoading: false,
       };
+    case GET_SEARCH_USERS:
+      return {
+        ...state,
+        searchUsers: action.payload,
+      };
     case UPDATE_ABOUT_SUCCESS:
     case UPDATE_SKILL_SUCCESS:
     case UPDATE_CONTACT_SUCCESS:
@@ -63,9 +70,18 @@ export default function authReducer(state = initialState, action) {
       };
     case AUTH_ERROR:
     case LOGIN_FAIL:
-    case LOGOUT_SUCCESS:
     case REGISTER_FAIL:
       localStorage.removeItem("remotelytoken");
+      return {
+        ...state,
+        token: null,
+        user: null,
+        isAuthenticated: false,
+        isLoading: false,
+      };
+    case LOGOUT_SUCCESS:
+      localStorage.removeItem("remotelytoken");
+      window.location.replace("/login");
       return {
         ...state,
         token: null,

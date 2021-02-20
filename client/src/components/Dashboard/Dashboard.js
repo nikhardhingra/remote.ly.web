@@ -27,12 +27,14 @@ class Dashboard extends Component {
                   text="Navigate through key phases of a haptics project life cycle and get help along the way"
                 />
               </Link>
-              <DashboardCard
-                image={SearchImage}
-                gradient="from-purple-500 to-green-300"
-                heading="Connect"
-                text="Connect with hapticians in the field and browse different types of projects for ideas"
-              />
+              <Link to="/connect">
+                <DashboardCard
+                  image={SearchImage}
+                  gradient="from-purple-500 to-green-300"
+                  heading="Connect"
+                  text="Connect with hapticians in the field and browse different types of projects for ideas"
+                />
+              </Link>
               <Link to="/profile">
                 <DashboardCard
                   image={ProfileImage}
@@ -41,12 +43,14 @@ class Dashboard extends Component {
                   text="Add your skills, projects and contact information to share with the community"
                 />
               </Link>
-              <DashboardCard
-                image={FAQImage}
-                gradient="from-blue-300 to-green-300"
-                heading="Frequently Asked Questions"
-                text="Find answers to the most commonly asked questions"
-              />
+              <Link to="/faq">
+                <DashboardCard
+                  image={FAQImage}
+                  gradient="from-blue-300 to-green-300"
+                  heading="Frequently Asked Questions"
+                  text="Find answers to the most commonly asked questions"
+                />
+              </Link>
             </div>
           </div>
         )}

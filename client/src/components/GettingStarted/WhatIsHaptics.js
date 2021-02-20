@@ -1,16 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
-import RoadMapNavbar from "./Navbar";
+import MyLink from "./MyLink";
 
 export default function WhatIsHaptics() {
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+
   return (
     <div>
       <div>
         <Navbar isAuthenticated={true} />
         <div className="bg-gray-100 p-6 relative pb-16">
           {/* <RoadMapNavbar /> */}
-          <h3 className="text-blue-600 text-3xl">What is haptics?</h3>
+          <div className="flex justify-between">
+            <h3 className="text-blue-600 text-3xl">What is haptics?</h3>
+            <div className="relative">
+              {!showHamburgerMenu ? (
+                <i
+                  className="fas fa-bars cursor-pointer"
+                  onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
+                ></i>
+              ) : (
+                <i
+                  className="fas fa-times cursor-pointer"
+                  onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
+                ></i>
+              )}
+              {showHamburgerMenu && (
+                <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div
+                    class="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="options-menu"
+                  >
+                    <MyLink to="/getting-started/what-is-haptics">
+                      What is Haptics?
+                    </MyLink>
+                    <MyLink to="/getting-started/problem-space">
+                      Identify Problem Space
+                    </MyLink>
+                    <MyLink to="" disabled={true}>
+                      Assemble Haptics Kit
+                    </MyLink>
+                    <MyLink to="" disabled={true}>
+                      Processing
+                    </MyLink>
+                    <MyLink to="" disabled={true}>
+                      Arduino
+                    </MyLink>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
           <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
             <p className="mt-2 text-2xl">
               Haptic technologies provide a way of recreating the sense of touch

@@ -7,6 +7,9 @@ import {
   UPDATE_PROJECT_SUCCESS,
   GET_ALL_PROJECTS_FAIL,
   GET_ALL_PROJECTS_SUCCESS,
+  LIST_ALL_PROJECTS_FAIL,
+  LIST_ALL_PROJECTS_SUCCESS,
+  GET_SEARCH_PROJECTS,
 } from "./constants";
 
 import { returnErrors } from "./errorActions";
@@ -108,5 +111,45 @@ export const updateProject = (project) => (dispatch, getState) => {
       dispatch({
         type: UPDATE_PROJECT_FAIL,
       });
+    });
+};
+
+export const searchProjects = ({ category }) => (dispatch, getState) => {
+  axios
+    .get(`/api/projects/search?category=${category}`, tokenConfig(getState))
+    .then((res) => {
+      dispatch({ type: GET_SEARCH_PROJECTS, payload: res.data.rows });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const clearSearchProjects = () => (dispatch) => {
+  dispatch({
+    type: GET_SEARCH_PROJECTS,
+    payload: [],
+  });
+};
+
+export const listProjects = (user_id) => (dispatch, getState) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+
+  axios
+    .get(`/api/projects/list?user_id=${user_id}`)
+    .then((res) => {
+      dispatch({
+        type: LIST_ALL_PROJECTS_SUCCESS,
+        payload: res.data.rows,
+      });
+    })
+    .catch((err) => {
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          LIST_ALL_PROJECTS_FAIL
+        )
+      );
     });
 };
