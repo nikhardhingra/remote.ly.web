@@ -6,6 +6,7 @@ import { getAllProjects } from "../../store/actions/projectActions";
 import Navbar from "../Navbar";
 import AboutModal from "./AboutModal";
 import ContactInfoModal from "./ContactInfoModal";
+import DeleteConfirmation from "./DeleteConfirmation";
 import ProjectModal from "./ProjectModal";
 import SkillModal from "./SkillModal";
 
@@ -17,6 +18,7 @@ class Profile extends Component {
       showSkillModal: false,
       showProjectModal: false,
       showContactInfoModal: false,
+      showDeleteConfirmationModal: false,
       selectedProject: null,
     };
   }
@@ -56,11 +58,16 @@ class Profile extends Component {
                     <i className="fas fa-phone inline mx-4" />
                     <span className="mr-4">CONTACT INFO</span>
                   </div>
-                  <div className="rounded py-4 px-2 border border-purple-500 mb-2 bg-gray-900 text-white text-center">
+                  {/* <div className="rounded py-4 px-2 border border-purple-500 mb-2 bg-gray-900 text-white text-center">
                     <i className="fas fa-lock inline mx-4" />
                     <span className="mr-4">CHANGE PASSWORD(not available)</span>
-                  </div>
-                  <div className="rounded py-4 px-2 border border-purple-500 mb-2 bg-white text-center cursor-pointer">
+                  </div> */}
+                  <div
+                    onClick={() => {
+                      this.setState({ showDeleteConfirmationModal: true });
+                    }}
+                    className="rounded py-4 px-2 border border-purple-500 mb-2 bg-white text-center cursor-pointer"
+                  >
                     <i className="fas fa-times-circle inline mx-4" />
                     <span className="mr-4">DELETE ACCOUNT</span>
                   </div>
@@ -181,6 +188,13 @@ class Profile extends Component {
         {this.state.showContactInfoModal && (
           <ContactInfoModal
             toggleModal={() => this.setState({ showContactInfoModal: false })}
+          />
+        )}
+        {this.state.showDeleteConfirmationModal && (
+          <DeleteConfirmation
+            toggleModal={() =>
+              this.setState({ showDeleteConfirmationModal: false })
+            }
           />
         )}
       </>

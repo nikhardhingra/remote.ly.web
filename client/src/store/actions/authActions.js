@@ -18,6 +18,7 @@ import {
   UPDATE_CONTACT_SUCCESS,
   UPDATE_CONTACT_FAIL,
   GET_SEARCH_USERS,
+  DELETE_ACCOUNT_SUCCESS,
 } from "./constants";
 
 // Check token and load user
@@ -122,6 +123,17 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT_SUCCESS,
   });
+};
+
+export const deleteUser = () => (dispatch, getState) => {
+  axios
+    .delete("/api/auth", tokenConfig(getState))
+    .then((res) => {
+      dispatch({ type: DELETE_ACCOUNT_SUCCESS });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const searchUsers = ({ name, experience, skill, type }) => (

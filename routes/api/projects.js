@@ -11,8 +11,6 @@ router.get("/search", (req, res) => {
   let response = new Response("", []);
   const { category } = req.query;
 
-  console.log(category);
-
   Project.find({ category }, function (err, projects) {
     if (err) {
       response.message = `Internal Server Error: ${err.toString()}`;
@@ -71,7 +69,6 @@ router.get("/list", (req, res) => {
 router.post("/", auth, (req, res) => {
   let response = new Response("", []);
   const { name, category, description } = req.body;
-  console.log(category);
   const user_id = req.user.id;
 
   if (!name || !(category.length > 0) || !description) {

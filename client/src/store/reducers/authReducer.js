@@ -15,6 +15,7 @@ import {
   UPDATE_CONTACT_SUCCESS,
   UPDATE_CONTACT_FAIL,
   GET_SEARCH_USERS,
+  DELETE_ACCOUNT_SUCCESS,
 } from "../actions/constants";
 
 const initialState = {
@@ -80,6 +81,7 @@ export default function authReducer(state = initialState, action) {
         isLoading: false,
       };
     case LOGOUT_SUCCESS:
+    case DELETE_ACCOUNT_SUCCESS:
       localStorage.removeItem("remotelytoken");
       window.location.replace("/login");
       return {

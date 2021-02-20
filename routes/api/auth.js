@@ -2,6 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const Project = require("../../models/Project");
 const { User } = require("../../models/User");
 
 const Response = require("../../utils/Response");
@@ -232,6 +233,26 @@ router.get("/user", auth, (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+router.delete("/", auth, (req, res) => {
+  let response = new Response("", []);
+  const user_id = req.user.id;
+
+  User.deleteOne({ _id: user_id }, function (err) {
+    if (err) {
+      response.message = `Internal Server Error: ${error}`;
+      return res.status(500).json(response);
+    }
+
+    Project.deleteMany({ user_id: user_id }, function (err) {
+      if (err) {
+        response.message = `Internal Server Error: ${error}`;
+        return res.status(500).json(response);
+      }
+      return res.json(response);
+    });
+  });
 });
 
 module.exports = router;
