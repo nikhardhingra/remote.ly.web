@@ -8,23 +8,21 @@ export default function FAQ() {
   return (
     <>
       <Navbar isAuthenticated={true} />
-      <div className="bg-gray-100 p-6 flex justify-evenly">
-        <Link to="/faq/remote.ly">
-          <DashboardCard
-            image={FAQImage}
-            gradient="from-blue-300 to-green-300"
-            heading="About Remote.ly"
-            text=""
-          />
-        </Link>
-        <Link to="/faq/about-haptics">
-          <DashboardCard
-            image={FAQImage}
-            gradient="from-blue-300 to-green-300"
-            heading="About Haptics technology"
-            text=""
-          />
-        </Link>
+      <div className="bg-gray-100 p-6 flex flex-wrap md:flex-nowrap -mx-1 lg:-mx-4 justify-evenly">
+        <DashboardCard
+          link="/faq/remote.ly"
+          image={FAQImage}
+          gradient="from-blue-300 to-green-300"
+          heading="About Remote.ly"
+          text=""
+        />
+        <DashboardCard
+          link="/faq/about-haptics"
+          image={FAQImage}
+          gradient="from-blue-300 to-green-300"
+          heading="About Haptics technology"
+          text=""
+        />
       </div>
     </>
   );

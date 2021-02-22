@@ -1,23 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const DashboardCard = ({ image, alt, heading, text, gradient }) => {
+function NewlineText(props) {
+  const text = props.children;
+  const newText = text.split("\n").map((str) => <p>{str}</p>);
+
+  return newText;
+}
+
+const DashboardCard = ({ image, alt, heading, text, link }) => {
   return (
-    <div className="shadow-lg rounded-lg m-10">
-      <div
-        className={`image-container bg-gradient-to-br ${gradient} rounded-lg p-6`}
-      >
-        <img
-          className="w-full"
-          style={{ backgroundColor: "transparent" }}
-          src={image}
-          alt={alt}
-        />
-      </div>
-      <div className="content p-4">
-        <h2 className="text-2xl font-bold">{heading}</h2>
-        <p className="text-sm text-gray-700">{text}</p>
-      </div>
-    </div>
+    <Link to={link} class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+      <article class="overflow-hidden rounded-lg shadow-lg">
+        <img alt={alt} class="block h-auto w-full" src={image} />
+
+        <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+          <h1 class="text-lg">
+            <p class="no-underline hover:underline text-black">{heading}</p>
+          </h1>
+        </header>
+        <main className="p-2 md:p-4">
+          <NewlineText>{text}</NewlineText>
+        </main>
+      </article>
+    </Link>
   );
 };
 

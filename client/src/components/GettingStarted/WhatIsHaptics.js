@@ -73,7 +73,7 @@ export default function WhatIsHaptics() {
               className="lg:ml-24 bg-gray-100"
             />
           </div>
-          <Link
+          {/* <Link
             to="/getting-started/problem-space"
             className="absolute right-2 bottom-2"
           >
@@ -94,6 +94,37 @@ export default function WhatIsHaptics() {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
+                  }}
+                ></i>
+              </a>
+            </div>
+          </Link> */}
+          <Link
+            to="/getting-started/problem-space"
+            className="fixed bottom-4 left-1/2"
+            style={{
+              transform: "translateX(-50%)",
+            }}
+          >
+            <div
+              className="hover:shadow-lg transition-shadow rounded p-4"
+              style={{
+                // height: 40,
+                // width: 40,
+                // borderRadius: "50%",
+                // border: "1px solid #5F2EEA",
+                backgroundColor: "#5f2eea",
+                position: "relative",
+              }}
+            >
+              <a href="#">
+                <span className="text text-white text-lg mr-2">
+                  Identify your Problem Space
+                </span>
+                <i
+                  className="fas fa-arrow-right"
+                  style={{
+                    color: "#fff",
                   }}
                 ></i>
               </a>

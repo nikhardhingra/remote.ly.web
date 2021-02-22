@@ -198,27 +198,33 @@ export default function HaplyDevKit() {
             haplyrobotics@gmail.com
           </a>
         </p>
+
         <Link
           to="/getting-started/configure-processing"
-          className="absolute right-2 bottom-2"
+          className="fixed bottom-4 left-1/2"
+          style={{
+            transform: "translateX(-50%)",
+          }}
         >
           <div
-            className="hover:shadow-lg transition-shadow"
+            className="hover:shadow-lg transition-shadow rounded p-4"
             style={{
-              height: 40,
-              width: 40,
-              borderRadius: "50%",
-              backgroundColor: "#5F2EEA",
+              // height: 40,
+              // width: 40,
+              // borderRadius: "50%",
+              // border: "1px solid #5F2EEA",
+              backgroundColor: "#5f2eea",
               position: "relative",
             }}
           >
             <a href="#">
+              <span className="text text-white text-lg mr-2">
+                Configure Software - Processing
+              </span>
               <i
-                class="fas fa-arrow-right absolute text-white"
+                className="fas fa-arrow-right"
                 style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  color: "#fff",
                 }}
               ></i>
             </a>

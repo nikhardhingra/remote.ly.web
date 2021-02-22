@@ -3,26 +3,28 @@ import { Provider } from "react-redux";
 // import Customers from "./components/Customer/customers";
 import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
+import Connect from "./components/Connect/Connect";
 import Dashboard from "./components/Dashboard/Dashboard";
+import AboutHaptics from "./components/FAQ/AboutHaptics";
+import FAQ from "./components/FAQ/FAQ";
+import Remotely from "./components/FAQ/Remotely";
+import ConfigureArduino from "./components/GettingStarted/ConfigureArduino";
+import ConfigureProcessing from "./components/GettingStarted/ConfigureProcessing";
 import GettingStarted from "./components/GettingStarted/GettingStarted";
-import WhatIsHaptics from "./components/GettingStarted/WhatIsHaptics";
+import HaplyDevKit from "./components/GettingStarted/HaplyDevKit";
 import ProblemSpace from "./components/GettingStarted/ProblemSpace";
+import WhatIsHaptics from "./components/GettingStarted/WhatIsHaptics";
+import WrapUp from "./components/GettingStarted/WrapUp";
 import Home from "./components/Home/Home";
+import ListAllProjects from "./components/ListAllProjects";
 import Login from "./components/Login/Login";
+import OtherUserProfile from "./components/Profile/OtherUserProfile";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import store from "./store";
 import { loadUser } from "./store/actions/authActions";
-import HaplyDevKit from "./components/GettingStarted/HaplyDevKit";
-import ConfigureProcessing from "./components/GettingStarted/ConfigureProcessing";
-import Connect from "./components/Connect/Connect";
-import OtherUserProfile from "./components/Profile/OtherUserProfile";
-import FAQ from "./components/FAQ/FAQ";
-import Remotely from "./components/FAQ/Remotely";
-import ListAllProjects from "./components/ListAllProjects";
-import AboutHaptics from "./components/FAQ/AboutHaptics";
 
 export default function App() {
   useEffect(() => {
@@ -77,6 +79,16 @@ export default function App() {
             <PrivateRoute
               component={ConfigureProcessing}
               path="/getting-started/configure-processing"
+              exact
+            />
+            <PrivateRoute
+              component={ConfigureArduino}
+              path="/getting-started/configure-arduino"
+              exact
+            />
+            <PrivateRoute
+              component={WrapUp}
+              path="/getting-started/wrap-up"
               exact
             />
             <PrivateRoute

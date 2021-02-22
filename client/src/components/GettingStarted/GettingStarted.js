@@ -35,7 +35,9 @@ export default function GettingStarted() {
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
                 >
-                  <MyLink to="/getting-started">What is Haptics?</MyLink>
+                  <MyLink to="/getting-started/what-is-haptics">
+                    What is Haptics?
+                  </MyLink>
                   <MyLink to="" disabled>
                     Identify Problem Space
                   </MyLink>
@@ -63,25 +65,30 @@ export default function GettingStarted() {
       </div>
       <Link
         to="/getting-started/what-is-haptics"
-        className="fixed bottom-4 right-4"
+        className="fixed bottom-4 left-1/2"
+        style={{
+          transform: "translateX(-50%)",
+        }}
       >
         <div
-          className="hover:shadow-lg transition-shadow"
+          className="hover:shadow-lg transition-shadow rounded p-4"
           style={{
-            height: 40,
-            width: 40,
-            borderRadius: "50%",
-            backgroundColor: "#5F2EEA",
+            // height: 40,
+            // width: 40,
+            // borderRadius: "50%",
+            // border: "1px solid #5F2EEA",
+            backgroundColor: "#5f2eea",
             position: "relative",
           }}
         >
           <a href="#">
+            <span className="text text-white text-lg mr-2">
+              What is Haptics?
+            </span>
             <i
-              className="fas fa-arrow-right absolute text-white"
+              className="fas fa-arrow-right"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
+                color: "#fff",
               }}
             ></i>
           </a>
