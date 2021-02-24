@@ -38,11 +38,20 @@ class OtherUserProfile extends Component {
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
               <div className="user-profile-top flex flex-col md:flex-row justify-between items-center">
                 <div className="user">
-                  <h2 className="text-3xl m-0 p-0 font-bold">
-                    {this.state.user.name}
-                  </h2>
-                  {this.state.user.experience &&
-                    this.state.user.experience.toUpperCase()}
+                  <div className="flex items-center">
+                    <img
+                      src={this.state.user.avatar_url}
+                      alt={this.state.user.name + " Profile Image"}
+                      className="mr-4"
+                    />
+                    <div className="user-details">
+                      <h2 className="text-3xl m-0 p-0 font-bold">
+                        {this.state.user.name}
+                      </h2>
+                      {this.state.user.experience &&
+                        this.state.user.experience.toUpperCase()}
+                    </div>
+                  </div>
                 </div>
                 <div className="cards">
                   <div

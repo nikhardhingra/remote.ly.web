@@ -16,6 +16,7 @@ import ProblemSpace from "./components/GettingStarted/ProblemSpace";
 import WhatIsHaptics from "./components/GettingStarted/WhatIsHaptics";
 import WrapUp from "./components/GettingStarted/WrapUp";
 import Home from "./components/Home/Home";
+import OurJourney from "./components/OurJourney/OurJourney";
 import ListAllProjects from "./components/ListAllProjects";
 import Login from "./components/Login/Login";
 import OtherUserProfile from "./components/Profile/OtherUserProfile";
@@ -39,6 +40,7 @@ export default function App() {
         <BrowserRouter>
           <Switch>
             <PublicRoute component={Home} path="/" exact />
+            <PublicRoute component={OurJourney} path="/our-journey" exact />
             <PublicRoute component={Login} path="/login" exact />
             <PublicRoute component={Register} path="/register" exact />
             <PrivateRoute component={Dashboard} path="/dashboard" exact />

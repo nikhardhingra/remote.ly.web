@@ -94,7 +94,13 @@ class Profile extends Component {
                   </div>
                 </div>
               </div>
-              <div className="about mt-10 p-10 mb-24">
+            </div>
+          )}
+        </div>
+        <div className="bg-white container p-6">
+          {this.props.user && this.props.user.experience && (
+            <div>
+              <div className="about shadow-xl mt-10 p-10">
                 <div className="flex flex-row justify-between items-center">
                   <h4 className="font-bold">About</h4>
                   <i
@@ -104,14 +110,8 @@ class Profile extends Component {
                     }}
                   ></i>
                 </div>
-                <p>{this.props.user.about}</p>
+                <p>{this.props.user.about || "Describe yourself."}</p>
               </div>
-            </div>
-          )}
-        </div>
-        <div className="bg-white container p-6">
-          {this.props.user && this.props.user.experience && (
-            <div>
               <div className="skills shadow-xl p-10 mt-10">
                 <div className="flex flex-row justify-between items-center">
                   <h4 className="font-bold">Skills</h4>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
   return (
@@ -17,47 +18,13 @@ export default function AboutUs() {
           hapticians get started on their haptics projects, learn from learn
           from experts and solve haptics-related challenges.
         </p>
-        <div className="grid content-center grid-cols-1 md:grid-cols-4">
-          <div className="person flex flex-col m-6">
-            <img
-              src={require("../../assets/images/Sunaina.png")}
-              className="m-6"
-            />
-            <div className="person-details bg-white border-purple-500 border rounded-lg p-4 mt-2">
-              <h3 className="font-semibold text-xl">Sunaina Basa</h3>
-              <p>Content Lead</p>
-            </div>
-          </div>
-          <div className="person flex flex-col m-6">
-            <img
-              src={require("../../assets/images/Riya.png")}
-              className="m-6"
-            />
-            <div className="person-details bg-white border-purple-500 border rounded-lg p-4 mt-2">
-              <h3 className="font-semibold text-xl">Riya Adukia</h3>
-              <p>Design Lead</p>
-            </div>
-          </div>
-          <div className="person flex flex-col m-6">
-            <img
-              src={require("../../assets/images/Jayant.png")}
-              className="m-6"
-            />
-            <div className="person-details bg-white border-purple-500 border rounded-lg p-4 mt-2">
-              <h3 className="font-semibold text-xl">Jayant Arora</h3>
-              <p>Design Lead</p>
-            </div>
-          </div>
-          <div className="person flex flex-col m-6">
-            <img
-              src={require("../../assets/images/Nikhar.png")}
-              className="m-6"
-            />
-            <div className="person-details bg-white border-purple-500 border rounded-lg p-4 mt-2">
-              <h3 className="font-semibold text-xl">Nikhar Dhingra</h3>
-              <p>Tech Lead</p>
-            </div>
-          </div>
+        <div className="mt-12 mb-12">
+          <Link
+            to="/our-journey"
+            className="bg-purple-700 rounded py-4 px-3 text-white"
+          >
+            Our Journey
+          </Link>
         </div>
       </div>
     </div>
