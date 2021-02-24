@@ -222,6 +222,29 @@ router.post("/skills", auth, (req, res) => {
     .catch((err) => {});
 });
 
+router.post("/change-avatar", auth, (req, res) => {
+  let response = new Response("", []);
+  User.updateOne(
+    { _id: req.user.id },
+    { $set: { avatar_url: req.body.avatarUrl } }
+  )
+    .then(() => {
+      User.findById(req.user.id)
+        .then((user) => {
+          response.rows = user;
+          console.log(response.rows);
+          return res.json(response);
+        })
+        .catch((err) => {
+          response.message = `Internal Server Error: ${error}`;
+          return res.status(500).json(response);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.get("/user", auth, (req, res) => {
   let response = new Response("", []);
   User.findById(req.user.id)

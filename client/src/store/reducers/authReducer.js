@@ -16,6 +16,8 @@ import {
   UPDATE_CONTACT_FAIL,
   GET_SEARCH_USERS,
   DELETE_ACCOUNT_SUCCESS,
+  UPDATE_AVATAR_FAIL,
+  UPDATE_AVATAR_SUCCESS,
 } from "../actions/constants";
 
 const initialState = {
@@ -57,6 +59,7 @@ export default function authReducer(state = initialState, action) {
     case UPDATE_ABOUT_SUCCESS:
     case UPDATE_SKILL_SUCCESS:
     case UPDATE_CONTACT_SUCCESS:
+    case UPDATE_AVATAR_SUCCESS:
       return {
         ...state,
         isLoading: false,
@@ -65,6 +68,7 @@ export default function authReducer(state = initialState, action) {
     case UPDATE_ABOUT_FAIL:
     case UPDATE_SKILL_FAIL:
     case UPDATE_CONTACT_FAIL:
+    case UPDATE_AVATAR_FAIL:
       return {
         ...state,
         isLoading: false,

@@ -19,6 +19,8 @@ import {
   UPDATE_CONTACT_FAIL,
   GET_SEARCH_USERS,
   DELETE_ACCOUNT_SUCCESS,
+  UPDATE_AVATAR_SUCCESS,
+  UPDATE_AVATAR_FAIL,
 } from "./constants";
 
 // Check token and load user
@@ -244,6 +246,43 @@ export const updateContactInfo = ({ github, linkedin }) => (
       );
       dispatch({
         type: UPDATE_CONTACT_FAIL,
+      });
+    });
+};
+
+export const updateAvatar = (avatarUrl) => (dispatch, getState) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  };
+
+  // Request body
+  const body = JSON.stringify({
+    avatarUrl,
+  });
+
+  axios
+    .post("/api/auth/change-avatar", body, config)
+    .then((res) => {
+      dispatch({
+        type: UPDATE_AVATAR_SUCCESS,
+        payload: { user: res.data.rows },
+      });
+    })
+    .catch((err) => {
+      console.log(err.response);
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          "UPDATE_AVATAR_FAIL"
+        )
+      );
+      dispatch({
+        type: UPDATE_AVATAR_FAIL,
       });
     });
 };

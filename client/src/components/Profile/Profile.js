@@ -5,6 +5,7 @@ import { loadUser } from "../../store/actions/authActions";
 import { getAllProjects } from "../../store/actions/projectActions";
 import Navbar from "../Navbar";
 import AboutModal from "./AboutModal";
+import ChangeAvatar from "./ChangeAvatar";
 import ContactInfoModal from "./ContactInfoModal";
 import DeleteConfirmation from "./DeleteConfirmation";
 import ProjectModal from "./ProjectModal";
@@ -19,6 +20,7 @@ class Profile extends Component {
       showProjectModal: false,
       showContactInfoModal: false,
       showDeleteConfirmationModal: false,
+      showChangeAvatarModal: false,
       selectedProject: null,
     };
   }
@@ -42,11 +44,30 @@ class Profile extends Component {
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
               <div className="user-profile-top flex flex-col md:flex-row justify-between items-center">
                 <div className="user">
-                  <h2 className="text-3xl m-0 p-0 font-bold">
-                    {this.props.user.name}
-                  </h2>
-                  {this.props.user.experience &&
-                    this.props.user.experience.toUpperCase()}
+                  <div className="flex items-center">
+                    <div className="avatar">
+                      <img
+                        src={this.props.user.avatar_url}
+                        alt={this.props.user.name + " Profile Image"}
+                        className="mr-4"
+                      />
+                      <p
+                        onClick={() =>
+                          this.setState({ showChangeAvatarModal: true })
+                        }
+                        className="text-blue-500 cursor-pointer underline"
+                      >
+                        Change avatar
+                      </p>
+                    </div>
+                    <div className="user-details">
+                      <h2 className="text-3xl m-0 p-0 font-bold">
+                        {this.props.user.name}
+                      </h2>
+                      {this.props.user.experience &&
+                        this.props.user.experience.toUpperCase()}
+                    </div>
+                  </div>
                 </div>
                 <div className="cards">
                   <div
@@ -195,6 +216,11 @@ class Profile extends Component {
             toggleModal={() =>
               this.setState({ showDeleteConfirmationModal: false })
             }
+          />
+        )}
+        {this.state.showChangeAvatarModal && (
+          <ChangeAvatar
+            toggleModal={() => this.setState({ showChangeAvatarModal: false })}
           />
         )}
       </>

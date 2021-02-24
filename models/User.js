@@ -15,6 +15,11 @@ const UserSchema = Schema({
     type: String, // novice or expert
     required: true,
   },
+  avatar_url: {
+    type: String,
+    default:
+      "https://cdn.discordapp.com/attachments/791677756768518144/814105866315497482/image_9.png",
+  },
   github: String,
   linkedin: String,
   about: String,
