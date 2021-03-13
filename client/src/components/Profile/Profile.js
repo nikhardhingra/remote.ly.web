@@ -9,6 +9,7 @@ import ChangeAvatar from "./ChangeAvatar";
 import ContactInfoModal from "./ContactInfoModal";
 import DeleteConfirmation from "./DeleteConfirmation";
 import ProjectModal from "./ProjectModal";
+import ResetPassword from "./ResetPassword";
 import SkillModal from "./SkillModal";
 
 class Profile extends Component {
@@ -21,6 +22,7 @@ class Profile extends Component {
       showContactInfoModal: false,
       showDeleteConfirmationModal: false,
       showChangeAvatarModal: false,
+      showResetPasswordModal: false,
       selectedProject: null,
     };
   }
@@ -34,6 +36,11 @@ class Profile extends Component {
     this.props.loadUser();
     this.props.getAllProjects();
   }
+  toggleResetModal = () => {
+    this.setState({
+      showResetPasswordModal: false,
+    });
+  };
   render() {
     return (
       <>
@@ -42,6 +49,9 @@ class Profile extends Component {
           {this.props.user && (
             <div className="container p-6 w-full">
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
+              {this.props.changePasswordError && (
+                <p className="text-red-500">{this.props.changePasswordError}</p>
+              )}
               <div className="user-profile-top flex flex-col md:flex-row justify-between items-center">
                 <div className="user">
                   <div className="flex items-center">
@@ -79,10 +89,15 @@ class Profile extends Component {
                     <i className="fas fa-phone inline mx-4" />
                     <span className="mr-4">CONTACT INFO</span>
                   </div>
-                  {/* <div className="rounded py-4 px-2 border border-purple-500 mb-2 bg-gray-900 text-white text-center">
+                  <div
+                    onClick={() =>
+                      this.setState({ showResetPasswordModal: true })
+                    }
+                    className="rounded py-4 px-2 border border-purple-500 mb-2 bg-white text-center cursor-pointer"
+                  >
                     <i className="fas fa-lock inline mx-4" />
-                    <span className="mr-4">CHANGE PASSWORD(not available)</span>
-                  </div> */}
+                    <span className="mr-4">CHANGE PASSWORD</span>
+                  </div>
                   <div
                     onClick={() => {
                       this.setState({ showDeleteConfirmationModal: true });
@@ -223,6 +238,9 @@ class Profile extends Component {
             toggleModal={() => this.setState({ showChangeAvatarModal: false })}
           />
         )}
+        {this.state.showResetPasswordModal && (
+          <ResetPassword toggleModal={this.toggleResetModal} />
+        )}
       </>
     );
   }
@@ -306,6 +324,7 @@ class Profile extends Component {
 const mapStateToProps = (state) => ({
   user: state.auth.user,
   projects: state.projects.projects,
+  changePasswordError: state.auth.changePasswordError,
 });
 
 export default connect(mapStateToProps, { getAllProjects, loadUser })(Profile);

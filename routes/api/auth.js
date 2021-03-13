@@ -245,6 +245,53 @@ router.post("/change-avatar", auth, (req, res) => {
     });
 });
 
+router.post("/reset-password", auth, (req, res) => {
+  let response = new Response("", []);
+  const { oldPassword, newPassword } = req.body;
+  const user_id = req.user.id;
+
+  User.findById(user_id)
+    .then((user) => {
+      if (!user) {
+        response.message = "User does not exist";
+        return res.status(400).json(response);
+      }
+
+      console.log(newPassword);
+      bcrypt
+        .compare(oldPassword, user.password)
+        .then((isMatch) => {
+          if (!isMatch) {
+            response.message = "Invalid credentials";
+            return res.status(400).json(response);
+          }
+          bcrypt.genSalt(10, (hash, salt) => {
+            bcrypt.hash(newPassword, salt, (err, hash) => {
+              if (err) throw err;
+              user.password = hash;
+              user
+                .save()
+                .then((user) => {
+                  return res.json(response);
+                })
+                .catch((err) => {
+                  response.message = `Internal Server Error: ${err.toString()}`;
+                  return res.status(500).json(response);
+                });
+            });
+          });
+        })
+        .catch((err) => {
+          response.message = `Internal Server Error: ${err.toString()}`;
+          return res.status(500).json(response);
+        });
+    })
+    .catch((err) => {
+      response.message = `Internal Server Error: ${err.toString()}`;
+      return res.status(500).json(response);
+    });
+});
+
 router.get("/user", auth, (req, res) => {
   let response = new Response("", []);
   User.findById(req.user.id)

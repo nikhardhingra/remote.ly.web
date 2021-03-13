@@ -18,6 +18,8 @@ import {
   DELETE_ACCOUNT_SUCCESS,
   UPDATE_AVATAR_FAIL,
   UPDATE_AVATAR_SUCCESS,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_FAIL,
 } from "../actions/constants";
 
 const initialState = {
@@ -26,6 +28,7 @@ const initialState = {
   isAuthenticated: null,
   isLoading: false,
   user: null,
+  changePasswordError: null,
 };
 
 export default function authReducer(state = initialState, action) {
@@ -41,6 +44,16 @@ export default function authReducer(state = initialState, action) {
         isAuthenticated: true,
         isLoading: false,
         user: action.payload,
+      };
+    case RESET_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        changePasswordError: "",
+      };
+    case RESET_PASSWORD_FAIL:
+      return {
+        ...state,
+        changePasswordError: "Current Password entered is wrong.",
       };
     case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:

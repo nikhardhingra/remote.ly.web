@@ -13,9 +13,11 @@ export default function WhatIsHaptics() {
           What is Haptics?
         </h1>
         <p className="mt-8 text-xl">
-          Haptic technology uses the sense of touch to communicate with the
-          user, the same way that computer graphics uses vision. You use haptics
-          everyday. Think of your smartphones with touch screens!
+          Haptics is the science and technology of transmitting and
+          understanding information through the sense of touch. It also relates
+          to the use of tactile sensations in interfaces. A common example is
+          the haptic feedback in mobile phones that is getting increasingly
+          subtle and sophisticated.
         </p>
       </div>
       <img

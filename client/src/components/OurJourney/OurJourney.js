@@ -53,10 +53,10 @@ function OurJourney() {
         </div>
         <p className="m-6 bg-white border-purple-500 border text-center rounded-lg p-6">
           Being undergraduate students who struggled to familiarize ourselves
-          with remote learning and project group work during the pandemic, our
-          team decided to build a product that would improve this experience. To
-          take this up a notch, we wanted to build a solution for projects that
-          require you to interact with your surroundings. Physical interactive
+          with remote learning and project group work during the pandemic, we
+          decided to build a product that would improve this experience. To take
+          this up a notch, we wanted to build a solution for projects that
+          requires you to interact with your surroundings. Physical interactive
           technology is incredibly difficult to learn and accomplish in-person,
           let alone to work with remotely. We felt passionately about this pain
           point and came together to find a solution, now named Remote.Ly!
@@ -96,8 +96,8 @@ function OurJourney() {
             <br /> 3. There is a lack of haptic hardware, methods to describe,
             share and test ideas as well as minimal supporting documentation to
             help novices.
-            <br /> 4. Lack of means to verify correct software setup, device
-            output and seek feedback design ideas without in-person meetings.
+            <br /> 4. Lack of a tool makes it difficult to verify software setup
+            and seek feedback design ideas without in-person meetings.
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -120,10 +120,10 @@ function OurJourney() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            The team takes on the role of novice hapticians (i.e. users) and
-            designers ourselves while building a haptics prototype to feel the
-            texture and coarseness of igneous rocks, to better understand the
-            problem space and user pain points.
+            We took the role of novice hapticians and designers ourselves. To
+            better understand the problem space and pain points, we built a
+            haptics prototype to feel the texture and coarseness of igneous
+            rocks.
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -147,7 +147,7 @@ function OurJourney() {
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
             We logged challenges that we faced at every stage of prototyping
-            from assembling the Haply device, setting up software, collecting
+            from assembling the Haply device, setting up software, to collecting
             feedback and designing. This helped us to identify the challenges
             that novice hapticians face while building haptics projects.
           </p>
@@ -172,14 +172,14 @@ function OurJourney() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            The team consolidated the challenges and translated them into
-            must-have, good-to-have and nice-to-have requirements for our final
-            solution. To prioritize the requirements, the team used a
-            Feasibility-Scope matrix to identify which requirements best address
-            our problem. Feasibility refers to how realizable it is for the team
-            to implement the solution for a specific requirement in the final
-            tool. Scope refers to the correlation between the specific
-            requirement and need identified by challenges.
+            We consolidated the challenges and translated them into must-have,
+            good-to-have and nice-to-have requirements for our final solution.
+            To prioritize the requirements, we used a Feasibility-Scope matrix
+            to identify which requirements best address our problem. Feasibility
+            refers to how achievable it is for us to implement the solution for
+            a specific requirement in the final tool. Scope refers to the
+            correlation between the specific requirement and need identified by
+            challenges.
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -202,12 +202,11 @@ function OurJourney() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We designed and developed Remote.Ly using the Haply Development kit
-            for hardware, and Processing, Arduino, MERN stack for software
-            components. Remote.Ly is the one-stop-shop platform to help novice
-            hapticians get started on their haptics projects, learn from the
-            community of other novice or expert hapticians and identify features
-            to improve remote collaboration.
+            We designed and developed Remote.Ly using the MERN stack for its
+            software components. Remote.Ly is the one-stop-shop platform to help
+            novice hapticians get started on their haptics projects, learn from
+            the community of other novice or expert hapticians and identify
+            features to improve remote collaboration.
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -230,10 +229,10 @@ function OurJourney() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            The team conducted thorough design validation and verification
-            testing for Remote.Ly. We aim to promote Remote.Ly on a global scale
-            in the near future in order to help novice and expert hapticians
-            across the world!
+            We conducted thorough design validation and verification testing for
+            Remote.Ly. We aim to promote Remote.Ly on a global scale in the near
+            future in order to help novice and expert hapticians across the
+            world!
           </p>
         </div>
       </div>

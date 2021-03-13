@@ -21,6 +21,8 @@ import {
   DELETE_ACCOUNT_SUCCESS,
   UPDATE_AVATAR_SUCCESS,
   UPDATE_AVATAR_FAIL,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_FAIL,
 } from "./constants";
 
 // Check token and load user
@@ -246,6 +248,47 @@ export const updateContactInfo = ({ github, linkedin }) => (
       );
       dispatch({
         type: UPDATE_CONTACT_FAIL,
+      });
+    });
+};
+
+export const resetPassword = ({ oldPassword, newPassword }) => (
+  dispatch,
+  getState
+) => {
+  const token = getState().auth.token || localStorage.getItem("remotelytoken");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  };
+
+  // Request body
+  const body = JSON.stringify({
+    oldPassword,
+    newPassword,
+  });
+
+  axios
+    .post("/api/auth/reset-password", body, config)
+    .then((res) => {
+      dispatch({
+        type: RESET_PASSWORD_SUCCESS,
+        payload: { user: res.data.rows },
+      });
+    })
+    .catch((err) => {
+      console.log(err.response);
+      dispatch(
+        returnErrors(
+          { msg: err.response.data.message },
+          err.response.status,
+          "RESET_PASSWORD_FAIL"
+        )
+      );
+      dispatch({
+        type: RESET_PASSWORD_FAIL,
       });
     });
 };

@@ -40,7 +40,9 @@ export default function Navbar({ isAuthenticated }) {
       </div>
       {!isAuthenticated && (
         <ul className="hidden md:block nav-item md:flex">
-          <li className="p-4">Home</li>
+          <Link to="/" className="p-4">
+            Home
+          </Link>
           <li
             className="p-4"
             onClick={() => {
