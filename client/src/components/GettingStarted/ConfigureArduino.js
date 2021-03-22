@@ -125,30 +125,47 @@ export default function ConfigureArduino() {
             How can I install and setup Arduino?
           </h3>
           <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
-            Below are the steps to install Arduino:
+           
             <ul className="ml-4" style={{ listStyleType: "disc" }}>
+             Below are the steps to install Arduino: <br /><br />
+             Option 1 <br />
               <li>
                 Download from{" "}
                 <a
                   target="_blank"
                   className="text-blue-500"
-                  href="https://processing.org/download/"
+                  href="https://www.arduino.cc/en/software"
                 >
-                  https://processing.org/download/
+                  https://www.arduino.cc/en/software
                 </a>
               </li>
               <li>
-                Reference the guide to ensure you are downloading the correct
+                Reference
+                <a
+              href= " https://www.arduino.cc/en/Guide "
+              target="_blank"
+              className="text-blue-500"
+                >
+              &nbsp;the guide&nbsp;
+              </a>
+                to ensure you are downloading the correct
                 Arduino Desktop IDE version for your OS (Windows, Linux or
                 MacOS)
               </li>
+              <br />
+              Option 2 <br />
               <li>
-                Alternatively, you can use Arduino web editor to write code and
+                Alternatively, you can use 
+                <a
+              href= "https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a "
+              target="_blank"
+              className="text-blue-500"
+                >
+              &nbsp;Arduino web editor&nbsp;
+              </a> to write code and
                 upload sketches to any official Arduino board from your web
                 browser
               </li>
-              <li>Accept Terms and Conditions</li>
-              <li>Open 'Arduino' to begin</li>
             </ul>
           </div>
           <h3 className="text-blue-600 text-3xl">

@@ -133,8 +133,6 @@ export default function ConfigureProcessing() {
                 Download version 3.5.4 for your OS (Windows, Linux or MacOS)
               </li>
               <li>Run Installer</li>
-              <li>Accept Terms and Conditions</li>
-              <li>Open ‘Processing’ to begin</li>
             </ul>
           </div>
           <h3 className="text-blue-600 text-3xl">
@@ -151,6 +149,35 @@ export default function ConfigureProcessing() {
               https://github.com/mllemango/HaplyDemo
             </a>
           </div>
+      <h3 className="text-blue-600 text-3xl">
+            Additional resources to help get started on Processing
+          </h3>
+          <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
+            Remote.ly provides a high-level overview of the software components of a haptics project as well as how to use Processing in your project. However, below are some more useful resources to help you:
+          <br />
+          <ol>
+          <li>1. Follow&nbsp; 
+            <a
+              href= "https://processing.org/download/"
+              target="_blank"
+              className="text-blue-500"
+            >
+            this   
+            </a>
+            &nbsp;link to download Processing</li>
+            <li>2. Run &nbsp; 
+            <a
+              href= "https://github.com/HaplyHaptics/Getting-Started/tree/master/Hello_Wall"
+              target="_blank"
+              className="text-blue-500"
+            >
+            this test program 
+            </a>
+            &nbsp; test program on Processing called Hello_Wall within the folder called HaplyHaptic/GettingStarted Github to make sure that Processing works correctly for you. Please note: you will have to change your port number in line 104. </li>
+            
+          </ol>
+          </div>
+
           <div className="flex items-end justify-between">
             <Link
               to="/getting-started/configure-arduino"

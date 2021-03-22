@@ -18,11 +18,11 @@ export default function Navbar({ isAuthenticated }) {
         />
         <div
           className="block md:hidden cursor-pointer"
-          onClick={() => {
-            document.querySelectorAll(".nav-item").forEach((item) => {
-              item.classList.toggle("active");
-            });
-          }}
+          // onClick={() => {
+          //   document.querySelectorAll(".nav-item").forEach((item) => {
+          //     item.classList.toggle("active");
+          //   });
+          // }}
         >
           <svg
             className="h-6 w-6 text-black"
