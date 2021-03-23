@@ -197,6 +197,15 @@ export default function HaplyDevKit() {
           <a href="mailto:haplyrobotics@gmail.com" className="text-blue-500">
             haplyrobotics@gmail.com
           </a>
+          <br />
+          <br />
+          <h3 className="text-blue-600 text-3xl mb-6">
+          Additional resources to help with Haply device
+          </h3>
+          Remote.ly provides a high-level overview of the instructions to assemble the haply device using the haply development kit. However, below are some more useful resources to help you:<br />
+          1. Follow this link to learn about all the folders, files and libraries required to build the Haply kit and set up software <br />
+          2. Follow this link to access step-by-step instructions on how to assemble the haptics hardware<br />
+          3. Follow this video tutorial to access step-by-step instructions on how to assemble the haptics hardware<br />
         </p>
 
         <Link
