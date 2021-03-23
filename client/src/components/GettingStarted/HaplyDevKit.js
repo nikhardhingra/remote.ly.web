@@ -8,8 +8,8 @@ import PartEModal from "./PartEModal";
 import PartFModal from "./PartFModal";
 import PartGModal from "./PartGModal";
 import { Link } from "react-router-dom";
-import MyLink from "./MyLink";
 import Navbar from "../Navbar";
+import Timeline from "./Timeline";
 
 export default function HaplyDevKit() {
   const [showVideoModal, setShowVideoModal] = useState(false);
@@ -20,56 +20,15 @@ export default function HaplyDevKit() {
   const [showPartEModal, setShowPartEModal] = useState(false);
   const [showPartFModal, setShowPartFModal] = useState(false);
   const [showPartGModal, setShowPartGModal] = useState(false);
-  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
   return (
     <div>
       <Navbar isAuthenticated={true} />
       <div className="bg-gray-100 p-6 relative pb-16">
-        <div className="flex justify-between">
-          <h3 className="text-blue-600 text-3xl mb-6">
-            What is the Haply Development Kit?
-          </h3>
-          <div className="relative">
-            {!showHamburgerMenu ? (
-              <i
-                className="fas fa-bars cursor-pointer"
-                onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              ></i>
-            ) : (
-              <i
-                className="fas fa-times cursor-pointer"
-                onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
-              ></i>
-            )}
-            {showHamburgerMenu && (
-              <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                <div
-                  class="py-1"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="options-menu"
-                >
-                  <MyLink to="/getting-started/what-is-haptics">
-                    What is Haptics?
-                  </MyLink>
-                  <MyLink to="/getting-started/problem-space">
-                    Identify Problem Space
-                  </MyLink>
-                  <MyLink to="/getting-started/haply-development-kit">
-                    Assemble Haptics Kit
-                  </MyLink>
-                  <MyLink to="/getting-started/configure-processing">
-                    Processing
-                  </MyLink>
-                  <MyLink to="" disabled={true}>
-                    Arduino
-                  </MyLink>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        <Timeline activeIndex={2} />
+        <h3 className="text-blue-600 text-3xl mb-6">
+          What is the Haply Development Kit?
+        </h3>
         <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
           <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
             The Haply Development Kit is a robust and adaptable open-source

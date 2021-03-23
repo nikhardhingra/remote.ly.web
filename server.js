@@ -10,7 +10,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/api/auth");
 const projectRoutes = require("./routes/api/projects");
 
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
