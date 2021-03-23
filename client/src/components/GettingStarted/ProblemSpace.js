@@ -56,7 +56,8 @@ export default function ProblemSpace() {
             </div>
           </div>
           <p className="mt-2 text-xl">
-            Choose a haptics project topic of your interest. Get inspiration from one of the example projects below:
+            Choose a haptics project topic of your interest. Below are some
+            example projects to seek inspiration from;
           </p>
           <div className="md:grid md:grid-cols-3 justify-between items-center mt-6">
             <div class="bg-white shadow-xl rounded-t-xl md:mr-16 mb-6">
@@ -225,8 +226,12 @@ export default function ProblemSpace() {
           </div>
           <div className="flex items-end justify-between">
             <p className="text-2xl mt-6">
-              Once you have chosen your project topic, you would now spend a substanital amount of time gathering all the requirements and prioritize your project’s goals and features.  Then you are good to build your haptics prototype!
+              Once you have chosen your project topic, gather all the
+              requirements
               <br />
+              and prioritize your project goals and features. Now you’re good to
+              <br />
+              start setting up hardware!
             </p>
             <Link
               to="/getting-started/haply-development-kit"
