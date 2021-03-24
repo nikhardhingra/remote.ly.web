@@ -11,7 +11,7 @@ export default function GettingStarted() {
       <div className="bg-gray-100 p-6 relative">
         {/* <RoadMapNavbar /> */}
         <h3 className="text-blue-600 text-2xl">
-          Ready to start your Haptics project?
+          Ready to start your haptics project?
         </h3>
         <p className="mt-2">
           Navigate through the following steps to learn more about Haptics and
@@ -41,7 +41,7 @@ export default function GettingStarted() {
         >
           <a href="#">
             <span className="text text-white text-lg mr-2">
-              What is Haptics?
+              What is haptics?
             </span>
             <i
               className="fas fa-arrow-right"
