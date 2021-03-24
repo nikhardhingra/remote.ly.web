@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import GettingStartedImage from "../../assets/images/In progress-rafiki 2.png";
 import ProfileImage from "../../assets/images/profile.png";
 import SearchImage from "../../assets/images/searchforexperts.png";
-import FAQImage from "../../assets/images/....png";
+import FAQImage from "../../assets/images/FAQImage.png";
 import Navbar from "../Navbar";
 import DashboardCard from "./DashboardCard";
 
