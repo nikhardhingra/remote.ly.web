@@ -51,8 +51,7 @@ class Dashboard extends Component {
                 image={FAQImage}
                 gradient="from-blue-300 to-green-300"
                 heading="Frequently Asked Questions"
-                text={`Find answers to the most commonly asked 
-                \nquestions`}
+                text={`Find answers to the most commonly asked questions`}
               />
               {/* </Link> */}
             </div>
