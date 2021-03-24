@@ -13,7 +13,7 @@ export default function GettingStarted() {
         {/* <RoadMapNavbar /> */}
         <div className="flex justify-between items-center">
           <h3 className="text-blue-600 text-2xl">
-            Ready to start your haptics project?
+            Ready to start your Haptics project?
           </h3>
           <div className="relative">
             {!showHamburgerMenu ? (
@@ -36,13 +36,13 @@ export default function GettingStarted() {
                   aria-labelledby="options-menu"
                 >
                   <MyLink to="/getting-started/what-is-haptics">
-                    What is haptics?
+                    What is Haptics?
                   </MyLink>
                   <MyLink to="" disabled>
-                    Identify problem space
+                    Identify Problem Space
                   </MyLink>
                   <MyLink to="" disabled={true}>
-                    Assemble haptics kit
+                    Assemble Haptics Kit
                   </MyLink>
                   <MyLink to="" disabled={true}>
                     Processing
@@ -83,7 +83,7 @@ export default function GettingStarted() {
         >
           <a href="#">
             <span className="text text-white text-lg mr-2">
-              What is haptics?
+              What is Haptics?
             </span>
             <i
               className="fas fa-arrow-right"
