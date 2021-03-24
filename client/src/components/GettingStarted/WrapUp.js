@@ -56,7 +56,7 @@ export default function WrapUp() {
             className="absolute top-1/2 left-1/2 text-3xl"
             style={{ transform: "translate(-50%, -50%)" }}
           >
-            You shoud now be ready to start your conceptual design, software
+            You should now be ready to start your conceptual design, software
             development and testing!
           </div>
           <div className="flex items-end justify-between">
