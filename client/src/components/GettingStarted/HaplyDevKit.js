@@ -39,9 +39,12 @@ export default function HaplyDevKit() {
             <br />
             <br />
             <br />
-            You can purchase the kit from Haply by contacting them at info@haply.co
+            You can purchase the kit from Haply by contacting them at 
+            <a className="text-blue-500" href="info@haply.co">
+            info@haply.co
+            </a> 
             <br />
-            For more information, please refer to: http://www.haply.co/
+            For more information, please refer to:
             <a className="text-blue-500" href="http://www.haply.co/">
               http://www.haply.co/
             </a>
