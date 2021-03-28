@@ -27,7 +27,7 @@ export default function HaplyDevKit() {
       <div className="bg-gray-100 p-6 relative pb-16">
         <Timeline activeIndex={2} />
         <h3 className="text-blue-600 text-3xl mb-6">
-          What is the Haply Development Kit?
+          What is the Haply development kit?
         </h3>
         <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
           <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
@@ -39,9 +39,9 @@ export default function HaplyDevKit() {
             <br />
             <br />
             <br />
-            You can purchase the kit from CanHaptics or Haply. For more
-            information, please refer to:
+            You can purchase the kit from Haply by contacting them at info@haply.co
             <br />
+            For more information, please refer to: http://www.haply.co/
             <a className="text-blue-500" href="http://www.haply.co/">
               http://www.haply.co/
             </a>
