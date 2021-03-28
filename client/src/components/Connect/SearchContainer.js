@@ -55,7 +55,7 @@ class SearchContainer extends Component {
             <tbody>
               <tr className="border-b-2 border-black">
                 <th>User</th>
-                <th>Project Type</th>
+                <th>Project Category</th>
                 <th>Skills</th>
                 <th></th>
               </tr>
