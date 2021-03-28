@@ -18,6 +18,16 @@ class Dashboard extends Component {
               Welcome, {this.props.user.name.split(" ")[0]}!
             </h1>
             <div className="flex flex-wrap md:flex-nowrap -mx-1 lg:-mx-4">
+              {/* </Link> */}
+              {/* <Link to="/profile"> */}
+              <DashboardCard
+                link="/profile"
+                image={ProfileImage}
+                gradient="from-purple-700 to-pink-300"
+                heading="My Profile"
+                text="Add your skills, projects and contact information to share with the community"
+              />
+
               {/* <Link to="/getting-started"> */}
               <DashboardCard
                 link="/getting-started"
@@ -35,15 +45,7 @@ class Dashboard extends Component {
                 heading="Connect"
                 text="Connect with hapticians in the field and browse different types of projects for ideas"
               />
-              {/* </Link> */}
-              {/* <Link to="/profile"> */}
-              <DashboardCard
-                link="/profile"
-                image={ProfileImage}
-                gradient="from-purple-700 to-pink-300"
-                heading="My Profile"
-                text="Add your skills, projects and contact information to share with the community"
-              />
+              
               {/* </Link> */}
               {/* <Link to="/faq"> */}
               <DashboardCard
