@@ -206,7 +206,7 @@ export default function ProblemSpace() {
               >
                 <a href="#">
                   <span className="text text-white text-lg mr-2">
-                    Haply Development Kit
+                    Haply development kit
                   </span>
                   <i
                     className="fas fa-arrow-right"

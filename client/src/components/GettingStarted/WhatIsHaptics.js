@@ -79,7 +79,7 @@ export default function WhatIsHaptics() {
             >
               <a href="#">
                 <span className="text text-white text-lg mr-2">
-                  Identify your Problem Space
+                  Identify problem space
                 </span>
                 <i
                   className="fas fa-arrow-right"
