@@ -10,12 +10,14 @@ export default function Navbar({ isAuthenticated }) {
         {/* <h1 className="logo text-3xl font-semibold">
           Remote<span style={{ color: "#FF7C5D" }}>.</span>ly
         </h1> */}
-        <img
-          src={Logo}
-          alt="Logo"
-          className="w-52"
-          style={{ backgroundColor: "#FDFDFD" }}
-        />
+        <Link to="/">
+          <img
+            src={Logo}
+            alt="Logo"
+            className="w-52"
+            style={{ backgroundColor: "#FDFDFD" }}
+          />
+        </Link>
         <div
           className="block md:hidden cursor-pointer"
           onClick={() => {

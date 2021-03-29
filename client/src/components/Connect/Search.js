@@ -21,6 +21,16 @@ export class Search extends Component {
     searchOptions: [],
   };
 
+  componentDidMount() {
+    this.props.searchUsers({
+      name: null,
+      skill: null,
+      experience: null,
+      type: null,
+      initial: true,
+    });
+  }
+
   handleSubmit = () => {
     const type = this.state.type.value;
 

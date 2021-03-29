@@ -140,13 +140,16 @@ export const deleteUser = () => (dispatch, getState) => {
     });
 };
 
-export const searchUsers = ({ name, experience, skill, type }) => (
+export const searchUsers = ({ name, experience, skill, type, initial }) => (
   dispatch,
   getState
 ) => {
   let queryParam;
   let queryValue;
-  if (type === "name") {
+  if (initial == true) {
+    queryParam = "initial";
+    queryValue = true;
+  } else if (type === "name") {
     queryParam = "name";
     queryValue = name;
   } else if (type === "experience") {

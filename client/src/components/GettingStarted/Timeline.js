@@ -5,34 +5,30 @@ const Timeline = ({ activeIndex }) => {
   //const { items } = props;
   const [items, setItems] = useState([
     {
-      name: "What is Haptics?",
+      name: "What is haptics",
       link: "/getting-started/what-is-haptics",
       active: false,
       isLink: true,
     },
     {
-      name: "Identify Problem Space",
+      name: "Identify problem space",
       link: "/getting-started/problem-space",
       active: false,
-      isLink: false,
     },
     {
-      name: "Assemble Haptics Kit",
+      name: "Assemble haptics kit",
       link: "/getting-started/haply-development-kit",
       active: false,
-      isLink: false,
     },
     {
-      name: "Processing",
+      name: "Configure Processing",
       link: "/getting-started/configure-processing",
       active: false,
-      isLink: false,
     },
     {
-      name: "Arduino",
+      name: "Configure Arduino",
       link: "/getting-started/configure-arduino",
       active: false,
-      isLink: false,
     },
   ]);
   useEffect(() => {
@@ -41,9 +37,6 @@ const Timeline = ({ activeIndex }) => {
       items.map((item, index) => {
         if (index <= activeIndex) {
           item.active = true;
-        }
-        if (index <= activeIndex + 1) {
-          item.isLink = true;
         }
         return item;
       })
@@ -72,8 +65,11 @@ const Timeline = ({ activeIndex }) => {
           <Link
             key={i}
             className={"timeline-item" + (item.active ? " active" : "")}
+            style={
+              i === activeIndex ? { backgroundColor: "#FF7A7A !important" } : {}
+            }
             data-content={i + 1}
-            to={item.isLink ? item.link : "#"}
+            to={item.link}
           >
             <div className="timeline-content">{item.name}</div>
           </Link>

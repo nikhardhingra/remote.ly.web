@@ -25,10 +25,21 @@ router.get("/user-item", (req, res) => {
 
 router.get("/search", (req, res) => {
   let response = new Response("", []);
-  let { name, experience, skill } = req.query;
-  console.log(skill);
+  let { name, experience, skill, initial } = req.query;
+  console.log("*****initial*****");
+  console.log(initial);
+  console.log("*****initial*****");
 
-  if (name) {
+  if (initial) {
+    User.find({}, function (err, users) {
+      if (err) {
+        response.message = `Internal Server Error: ${err.toString()}`;
+        return res.status(500).json(response);
+      }
+      response.rows = users;
+      return res.json(response);
+    });
+  } else if (name) {
     User.find({ name: new RegExp(name, "i") }, function (err, users) {
       if (err) {
         response.message = `Internal Server Error: ${err.toString()}`;
