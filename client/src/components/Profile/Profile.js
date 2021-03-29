@@ -45,8 +45,7 @@ class Profile extends Component {
     return (
       <>
         <Navbar isAuthenticated={true} />
-        <div className="bg-gray-100">
-          
+        <div className="bg-gray-100"> 
           {this.props.user && (
             <div className="container p-6 w-full">
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
