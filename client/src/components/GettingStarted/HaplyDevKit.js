@@ -128,9 +128,9 @@ export default function HaplyDevKit() {
             </div>
           </div>
         </div>
-        <h3 className="text-blue-600 text-3xl mb-6">
-          How can I use the Haply device?
-        </h3>
+        
+      <div className="bg-gray-100 p-6 relative pb-16">
+      <h3 className="text-blue-600 text-3xl mb-6"> How can I use the Haply device?</h3>
       <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
         <p className="max-w-4xl text-lg">
           The Haply project is intended to provide novice designers and
@@ -163,7 +163,9 @@ export default function HaplyDevKit() {
           </a>
           </p>
         </div>
+        </div>
 
+       <div className="bg-gray-100 p-6 relative pb-16">
        <h3 className="text-blue-600 text-3xl mb-6">
           Additional resources to help with Haply device
         </h3>
@@ -185,6 +187,8 @@ export default function HaplyDevKit() {
           <br />
           </p>
         </div>
+        </div>
+
 
         <Link
           to="/getting-started/configure-processing"
