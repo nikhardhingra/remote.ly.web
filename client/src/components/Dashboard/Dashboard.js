@@ -10,8 +10,8 @@ import DashboardCard from "./DashboardCard";
 class Dashboard extends Component {
   render() {
     return (
-      <div className="min-h-screen bg-gray-100">
-        <Navbar isAuthenticated={true} />
+      <Navbar isAuthenticated={true} />
+      <div className="min-h-screen bg-gray-100"> 
         {this.props.user && (
           <div className="container p-6 w-full">
             <h1 className="text-4xl text-blue-800">
