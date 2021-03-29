@@ -130,7 +130,7 @@ export default function ConfigureProcessing() {
               >
                 <a href="#">
                   <span className="text text-white text-lg mr-2">
-                    Configure Software - Arduino
+                    Arduino
                   </span>
                   <i
                     className="fas fa-arrow-right"

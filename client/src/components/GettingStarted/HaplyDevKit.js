@@ -108,6 +108,7 @@ export default function HaplyDevKit() {
             screw. Only one will be included
           </b>
         </div>
+        
         <h3 className="text-blue-600 text-3xl mb-6">
           Steps to assemble the Haply device
         </h3>
@@ -129,10 +130,12 @@ export default function HaplyDevKit() {
           </div>
         </div>
         
-      <div className="bg-gray-100 p-6 relative pb-16">
+
+          
+       
       <h3 className="text-blue-600 text-3xl mb-6"> How can I use the Haply device?</h3>
       <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
-        <p className="max-w-4xl text-lg">
+        <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
           The Haply project is intended to provide novice designers and
           developers a platform from which to explore the field of haptics. The
           Haply board is a highly robust and configurable open-source platform
@@ -156,21 +159,20 @@ export default function HaplyDevKit() {
             https://github.com/HaplyHaptics/Getting-Started/tree/master/The-Haply-Development-Kit
           </a>
           <br />
-          <br />
           Contact for more information:{" "}
           <a href="mailto:haplyrobotics@gmail.com" className="text-blue-500">
             haplyrobotics@gmail.com
           </a>
           </p>
         </div>
-        </div>
+        
 
-       <div className="bg-gray-100 p-6 relative pb-16">
+       
        <h3 className="text-blue-600 text-3xl mb-6">
           Additional resources to help with Haply device
         </h3>
         <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
-        <p className="max-w-4xl text-lg">
+        <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
           Remote.ly provides a high-level overview of the instructions to assemble the haply device using the haply development kit. However, below are some more useful resources to help you:
           <br />
           1. Follow <a className="text-blue-500"
@@ -186,7 +188,6 @@ export default function HaplyDevKit() {
                       target="_blank">this video tutorial</a> to access step-by-step instructions on how to assemble the haptics hardware.
           <br />
           </p>
-        </div>
         </div>
 
 
