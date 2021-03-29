@@ -33,6 +33,50 @@ export default function WhatIsHaptics() {
               className="lg:ml-24 bg-gray-100"
             />
           </div>
+
+          <h3 className="text-blue-600 text-3xl">Wonders of Haptics</h3>
+          <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
+            <img
+              src={require("../../assets/images/Teslasuit.png")}
+              className="lg:ml-24 bg-gray-100"
+            />
+            <p className="mt-2 text-2xl">
+            <b>Teslasuit full body haptic VR suit</b> 
+            <br />           
+              “The suit is currently the most technologically advanced VR haptic device in the market. The suit captures virtual actions in real-time as they are performed in order to establish the baselines, create programs and also track the improvements over a period of time. It can also capture the biometrics through sensors that track vitals as well as emotional stress levels. This enables users or trainees to demonstrate their ability to perform under pressure.” 
+              <br />
+              <br />
+            </p>
+            </div>
+
+            <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
+            <p className="mt-2 text-2xl">
+            <b>Dexmo haptic glove</b> 
+            <br />           
+             “The Dexmo haptic glove is an exoskeleton with a very refined and superior-looking design as well as functionality. The gloves are also completely wireless which makes them easy to use without being burdened with too much cabling.
+These gloves can track up to 11 degrees of freedom hand motion for each of the hands so they can capture the user’s full hand motion at full dexterity. This enables you to have a realistic finger presence in the virtual environment.” 
+              <br />
+              <br />
+            </p>
+             <img
+              src={require("../../assets/images/Dexmo.png")}
+              className="lg:ml-24 bg-gray-100"
+            />
+            </div>
+
+            <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
+            <p className="mt-2 text-2xl">
+            <b> HaptX Gloves </b> 
+            <br />           
+“HaptX Gloves DK2 feature the industry's most powerful force feedback with 133 points of tactile feedback per hand, for full palm and fingertip coverage. Whether you’re training your workforce, designing a new product, or controlling robots from a distance, HaptX Gloves make it feel rea.l”               <br />
+              <br />
+            </p>
+             <img
+              src={require("../../assets/images/HaptX.png")}
+              className="lg:ml-24 bg-gray-100"
+            />
+            </div>
+
           {/* <Link
             to="/getting-started/problem-space"
             className="absolute right-2 bottom-2"
