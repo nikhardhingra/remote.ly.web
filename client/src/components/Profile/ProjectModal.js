@@ -43,6 +43,7 @@ class ProjectModal extends Component {
           value: singleCategory,
         })),
         description: this.props.project.description,
+        url: this.props.project.url,
         toBeEdited: true,
       });
     }
