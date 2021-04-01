@@ -68,7 +68,7 @@ router.get("/list", (req, res) => {
 
 router.post("/", auth, (req, res) => {
   let response = new Response("", []);
-  const { name, category, description } = req.body;
+  const { name, category, description,url } = req.body;
   const user_id = req.user.id;
 
   if (!name || !(category.length > 0) || !description) {
@@ -81,6 +81,7 @@ router.post("/", auth, (req, res) => {
     category,
     user_id,
     description,
+    url,
   });
 
   project
@@ -97,7 +98,7 @@ router.post("/", auth, (req, res) => {
 
 router.put("/", auth, (req, res) => {
   let response = new Response("", []);
-  const { name, category, description, project_id } = req.body;
+  const { name, category, description, url, project_id } = req.body;
   const user_id = req.user.id;
 
   if (!name || !(category.length > 0) || !description) {
@@ -124,6 +125,7 @@ router.put("/", auth, (req, res) => {
     project.name = name;
     project.description = description;
     project.category = category;
+    project.url = url;
 
     project
       .save()

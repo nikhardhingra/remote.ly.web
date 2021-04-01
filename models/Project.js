@@ -18,6 +18,10 @@ const ProjectSchema = Schema({
     type: String,
     required: true,
   },
+  url:{
+    type: String,
+    required: false,
+  },
   // TODO: image
 });
 
