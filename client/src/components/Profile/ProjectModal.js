@@ -167,15 +167,14 @@ class ProjectModal extends Component {
 
                   <div className="mt-2">
                     <label htmlFor="bio" className="block">
-                      PROJECT URL *
+                      PROJECT URL 
                     </label>
-                    <textarea
-                      type="text"
+                
+                     <input
+                      type="url"
                       value={this.state.url}
-                      className="border rounded border-purple-500 w-full h-24"
-                      onChange={(e) =>
-                        this.setState({ url: e.target.value })
-                      }
+                      className="border rounded border-purple-500 w-full h-8"
+                      onChange={(e) => this.setState({ url: e.target.value })}
                     />
                   </div>
                 </div>
