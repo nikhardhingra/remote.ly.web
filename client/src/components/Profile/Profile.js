@@ -188,6 +188,9 @@ class Profile extends Component {
                           <p className="mt-2 text-gray-400 italic">
                             {project.description}
                           </p>
+                           <p className="mt-2 text-blue-600">
+                            {project.url}
+                          </p>
                         </div>
                       ))
                     : "Add new projects"}
