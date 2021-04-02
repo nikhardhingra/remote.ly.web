@@ -27,6 +27,7 @@ class ProjectModal extends Component {
     this.state = {
       name: "",
       category: "",
+      url: "",
       description: "",
       toBeEdited: false,
     };
@@ -42,6 +43,7 @@ class ProjectModal extends Component {
           value: singleCategory,
         })),
         description: this.props.project.description,
+        url: this.props.project.url,
         toBeEdited: true,
       });
     }
@@ -53,12 +55,14 @@ class ProjectModal extends Component {
         project_id: this.props.project._id,
         name: this.state.name,
         category: categories,
+        url: this.state.url,
         description: this.state.description,
       });
     } else {
       await this.props.addProject({
         name: this.state.name,
         category: categories,
+        url: this.state.url,
         description: this.state.description,
       });
     }
@@ -161,6 +165,19 @@ class ProjectModal extends Component {
                       }
                     />
                   </div>
+
+                  <div className="mt-2">
+                    <label htmlFor="bio" className="block">
+                      PROJECT URL 
+                    </label>
+                
+                     <input
+                      type="url"
+                      value={this.state.url}
+                      className="border rounded border-purple-500 w-full h-8"
+                      onChange={(e) => this.setState({ url: e.target.value })}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -178,6 +195,7 @@ class ProjectModal extends Component {
                 onClick={() => {
                   this.setState({
                     name: "",
+                    url: "",
                     description: "",
                     category: "",
                     toBeEdited: false,

@@ -15,7 +15,7 @@ export default function Navbar({ isAuthenticated }) {
             src={Logo}
             alt="Logo"
             className="w-52"
-            style={{ backgroundColor: "#FDFDFD" }}
+            style={{ backgroundColor: "#FFFFFF" }}
           />
         </Link>
         <div

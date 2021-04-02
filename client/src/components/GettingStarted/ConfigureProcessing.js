@@ -14,20 +14,10 @@ export default function ConfigureProcessing() {
             Basic functions of Processing
           </h3>
           <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
-            Processing was designed as a first programming language. Inspired by
-            earlier languages like BASIC and Logo , as well as experiences of
-            students and teaching visual arts foundation curriculum.
+            Processing was designed as a first programming language. This was inspired by older languages like BASIC and Logo , as well as the experiences of students with the curriculum.
             <br />
             <br />
-            Processing is used worldwide today in high schools, entry-level
-            college courses, computer science programs, and humanities curricula
-            to teach introductory computing exercises. The Processing approach
-            has also been applied to electronics through the Arduino and Wiring
-            projects. Arduino uses a syntax inspired by that used with
-            Processing, and continues to use a modified version of the
-            Processing programming environment to make it easier for students to
-            learn how to program robots and countless other electronics
-            projects.
+            Processing is used worldwide today in high schools, entry-level college courses, computer science programs to teach introductory computing exercises. The Processing approach has also been applied to electronics through the Arduino and Wiring projects. Arduino uses a syntax inspired by that used with Processing, and continues to use a modified version of the Processing programming environment to make it easier for students to learn how to program robots and countless other electronics projects.
             <br />
             <br />
             <b>
@@ -91,8 +81,6 @@ export default function ConfigureProcessing() {
                 Download version 3.5.4 for your OS (Windows, Linux or MacOS)
               </li>
               <li>Run Installer</li>
-              <li>Accept Terms and Conditions</li>
-              <li>Open ‘Processing’ to begin</li>
             </ul>
           </div>
           <h3 className="text-blue-600 text-3xl">
@@ -109,6 +97,24 @@ export default function ConfigureProcessing() {
               https://github.com/mllemango/HaplyDemo
             </a>
           </div>
+
+           <h3 className="text-blue-600 text-3xl mb-6">
+          Additional resources to help get started on  Processing</h3>
+        <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
+        <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
+          Remote.ly provides a high-level overview of the software components of a haptics project as well as how to use Processing in your project. However, below are some more useful resources to help you:
+          <br />
+          1. Follow <a className="text-blue-500"
+                     href="https://processing.org/download/"
+                      target="_blank">this</a> link to download Processing
+   <br />
+          2.  Run <a className="text-blue-500"
+                     href="https://github.com/HaplyHaptics/Getting-Started/tree/master/Hello_Wall"
+                      target="_blank">this test program</a> test program on Processing called Hello_Wall within the folder called HaplyHaptic/GettingStarted Github to make sure that Processing works correctly for you. Please note: you will have to change your port number in line 104. 
+            <br />
+          </p>
+        </div>
+
           <div className="flex items-end justify-between">
             <Link
               to="/getting-started/configure-arduino"
@@ -130,7 +136,7 @@ export default function ConfigureProcessing() {
               >
                 <a href="#">
                   <span className="text text-white text-lg mr-2">
-                    Configure Software - Arduino
+                    Arduino
                   </span>
                   <i
                     className="fas fa-arrow-right"

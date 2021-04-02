@@ -44,8 +44,8 @@ class Profile extends Component {
   render() {
     return (
       <>
-        <div className="bg-gray-100">
-          <Navbar isAuthenticated={true} />
+        <Navbar isAuthenticated={true} />
+        <div className="bg-gray-100"> 
           {this.props.user && (
             <div className="container p-6 w-full">
               <h1 className="text-4xl text-blue-800 mb-12">My Profile</h1>
@@ -187,6 +187,9 @@ class Profile extends Component {
                           </h3>
                           <p className="mt-2 text-gray-400 italic">
                             {project.description}
+                          </p>
+                           <p className="mt-2 text-blue-600">
+                            {project.url}
                           </p>
                         </div>
                       ))

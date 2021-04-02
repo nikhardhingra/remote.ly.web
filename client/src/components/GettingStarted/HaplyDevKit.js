@@ -56,11 +56,12 @@ export default function HaplyDevKit() {
           />
         </div>
         <h3 className="text-blue-600 text-3xl mb-6">
-          Components of the Haply Development Kit?
+          Components of the Haply development kit.
         </h3>
         <img
           src={require("../../assets/images/haply kit assembly 1.png")}
           alt=""
+
         />
         <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
           Components of the Haply development kit include:
@@ -107,6 +108,7 @@ export default function HaplyDevKit() {
             screw. Only one will be included
           </b>
         </div>
+        
         <h3 className="text-blue-600 text-3xl mb-6">
           Steps to assemble the Haply device
         </h3>
@@ -127,10 +129,13 @@ export default function HaplyDevKit() {
             </div>
           </div>
         </div>
-        <h3 className="text-blue-600 text-3xl mb-6">
-          How can I use the Haply device?
-        </h3>
-        <p className="max-w-4xl text-lg">
+        
+
+          
+       
+      <h3 className="text-blue-600 text-3xl mb-6"> How can I use the Haply device?</h3>
+      <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
+        <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
           The Haply project is intended to provide novice designers and
           developers a platform from which to explore the field of haptics. The
           Haply board is a highly robust and configurable open-source platform
@@ -154,12 +159,37 @@ export default function HaplyDevKit() {
             https://github.com/HaplyHaptics/Getting-Started/tree/master/The-Haply-Development-Kit
           </a>
           <br />
-          <br />
           Contact for more information:{" "}
           <a href="mailto:haplyrobotics@gmail.com" className="text-blue-500">
             haplyrobotics@gmail.com
           </a>
-        </p>
+          </p>
+        </div>
+        
+
+       
+       <h3 className="text-blue-600 text-3xl mb-6">
+          Additional resources to help with Haply device
+        </h3>
+        <div className="flex flex-col-reverse lg:flex-row items-center mb-10">
+        <p className="text bg-white p-6 rounded shadow-xl lg:mr-10">
+          Remote.ly provides a high-level overview of the instructions to assemble the haply device using the haply development kit. However, below are some more useful resources to help you:
+          <br />
+          1. Follow <a className="text-blue-500"
+                     href="https://github.com/HaplyHaptics/Getting-Started"
+                      target="_blank">this</a> link to learn about all the folders, files and libraries required to build the Haply kit and set up software.
+          <br />
+          2. Follow <a className="text-blue-500"
+                     href="https://github.com/HaplyHaptics/Getting-Started/tree/master/The-Haply-Development-Kit"
+                      target="_blank">this</a> link to access step-by-step instructions on how to assemble the haptics hardware.
+          <br />
+          3. Follow <a className="text-blue-500"
+                     href= "https://www.youtube.com/watch?v=tQ1dvmKBscw&feature=emb_title"
+                      target="_blank">this video tutorial</a> to access step-by-step instructions on how to assemble the haptics hardware.
+          <br />
+          </p>
+        </div>
+
 
         <Link
           to="/getting-started/configure-processing"
@@ -181,7 +211,7 @@ export default function HaplyDevKit() {
           >
             <a href="#">
               <span className="text text-white text-lg mr-2">
-                Configure Software - Processing
+               Processing
               </span>
               <i
                 className="fas fa-arrow-right"
