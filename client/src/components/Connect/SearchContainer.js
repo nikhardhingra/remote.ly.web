@@ -25,7 +25,7 @@ class SearchContainer extends Component {
                     </button>
                   </td>
                   <td className="p-2 text-center">
-                    {user.skills.map((skill, idx) => (
+                    {user.skills.slice(0, 3).map((skill, idx) => (
                       <button
                         style={{ backgroundColor: "#7A7CFF" }}
                         class="py-2 cursor-text px-4 shadow-md no-underline rounded-full bg-gray-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-light focus:outline-none active:shadow-none mr-2"
@@ -34,6 +34,7 @@ class SearchContainer extends Component {
                         {skill}
                       </button>
                     ))}
+                    {user.skills.length > 3 && " ..."}
                     {!user.skills.length > 0 && "None Added Yet"}
                   </td>
                   <td>
