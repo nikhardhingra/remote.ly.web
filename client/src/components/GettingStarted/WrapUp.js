@@ -56,8 +56,7 @@ export default function WrapUp() {
             className="absolute top-1/2 left-1/2 text-3xl"
             style={{ transform: "translate(-50%, -50%)" }}
           >
-            You should now be ready to start your conceptual design, software
-            development and testing!
+            Once you complete your conceptual design, you should now be ready to code and test your haptics project!
           </div>
           <div className="flex items-end justify-between">
             <Link
