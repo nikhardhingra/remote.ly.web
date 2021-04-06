@@ -88,9 +88,9 @@ export default function ConfigureArduino() {
                 <a
                   target="_blank"
                   className="text-blue-500"
-                  href="https://processing.org/download/"
+                  href= "https://www.arduino.cc/en/software"
                 >
-                  https://processing.org/download/
+                  https://www.arduino.cc/en/software
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ export default function ConfigureArduino() {
             </ul>
           </div>
           <h3 className="text-blue-600 text-3xl">
-            Sample projects using Processing
+            Sample projects using Arduino
           </h3>
           <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
             Refer to this link to learn about haptics projects built in Arduino:{" "}
@@ -141,7 +141,7 @@ export default function ConfigureArduino() {
                 }}
               >
                 <a href="#">
-                  <span className="text text-white text-lg mr-2">Wrap Up!</span>
+                  <span className="text text-white text-lg mr-2">Design and Development</span>
                   <i
                     className="fas fa-arrow-right"
                     style={{
