@@ -9,7 +9,7 @@ export default function DesignDev() {
       <div>
         <Navbar isAuthenticated={true} />
         <div className="bg-gray-100 p-6 relative pb-16">
-          <Timeline activeIndex={4} />
+          <Timeline activeIndex={5} />
           <h3 className="text-blue-600 text-3xl">Basic functions of Arduino</h3>
           <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
             Arduino is an open-source electronics platform that has been the
