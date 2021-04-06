@@ -14,6 +14,7 @@ import GettingStarted from "./components/GettingStarted/GettingStarted";
 import HaplyDevKit from "./components/GettingStarted/HaplyDevKit";
 import ProblemSpace from "./components/GettingStarted/ProblemSpace";
 import WhatIsHaptics from "./components/GettingStarted/WhatIsHaptics";
+import DesignDev from "./components/GettingStarted/DesignDev";
 import WrapUp from "./components/GettingStarted/WrapUp";
 import Home from "./components/Home/Home";
 import OurJourney from "./components/OurJourney/OurJourney";
@@ -66,6 +67,12 @@ export default function App() {
             <PrivateRoute
               component={WhatIsHaptics}
               path="/getting-started/what-is-haptics"
+              exact
+            />
+
+             <PrivateRoute
+              component={DesignDev}
+              path="/getting-started/design-dev"
               exact
             />
             <PrivateRoute
