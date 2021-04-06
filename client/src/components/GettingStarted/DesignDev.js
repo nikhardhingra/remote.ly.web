@@ -21,7 +21,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 21.png")}
+                src={require("../../assets/images/image 28.png")}
                 // className="w-full"
                 alt=""
               />
@@ -30,24 +30,11 @@ export default function DesignDev() {
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 1
               </div>
-              <div className="text-lg">Research on Haptics</div>
+              <div className="text-lg">Brainstorm Designs</div>
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We studied research papers written by several expert hapticians and
-            designers such as Professor Oliver Schneider. We learned about major
-            challenges faced by inexperienced designers and hapticians while
-            building projects. Some of the main challenges we found are:
-            <br /> 1. Novices tend to ignore many of the design choices such as
-            choosing appropriate haptic and graphic feedback or the right build
-            environment.
-            <br /> 2. Novices lack expertise in working with hardware, software,
-            conceptual design and evaluation.
-            <br /> 3. There is a lack of haptic hardware, methods to describe,
-            share and test ideas as well as minimal supporting documentation to
-            help novices.
-            <br /> 4. Lack of a tool makes it difficult to verify software setup
-            and seek feedback design ideas without in-person meetings.
+            Once requirements have been finalized on what haptics product you want to develop, brainstorm different behaviours and designs to prototype. 
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -57,7 +44,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 22.png")}
+                src={require("../../assets/images/image 29.png")}
                 // className="w-full"
                 alt=""
               />
@@ -66,14 +53,11 @@ export default function DesignDev() {
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 2
               </div>
-              <div className="text-lg">Build Prototype</div>
+              <div className="text-lg">Implement low-fidelity prototypes</div>
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We took the role of novice hapticians and designers ourselves. To
-            better understand the problem space and pain points, we built a
-            haptics prototype to feel the texture and coarseness of igneous
-            rocks.
+          Low-fidelity or low-tech prototype is a semi-finished prototype that focuses on function, structure, process. It provides the simplest framework and elements of the product. It can take the form of sketches, storyboards, gestures or 3D models. You can use MIRO, Figma or Visio as they have great templates to get you started. 
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -83,7 +67,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 24.png")}
+                src={require("../../assets/images/image 30.png")}
                 className="w-52"
                 alt=""
               />
@@ -92,15 +76,11 @@ export default function DesignDev() {
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 3
               </div>
-              <div className="text-lg">Document Challenges</div>
+              <div className="text-lg">Evaluate low-fidelty prototypes</div>
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We logged challenges that we faced at every stage of prototyping
-            from assembling the Haply device, setting up software, to collecting
-            feedback and designing. This helped us to identify the challenges
-            that novice hapticians face while building haptics projects.
-          </p>
+          Seek feedback on your low-fidelity prototype from target users or users in the Remote.Ly community. Ensure you are going through ideas quickly and do not spend time implementing bad ideas.   </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
@@ -109,7 +89,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 23.png")}
+                src={require("../../assets/images/image 31.png")}
                 // className="w-full"
                 alt=""
               />
@@ -122,14 +102,7 @@ export default function DesignDev() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We consolidated the challenges and translated them into must-have,
-            good-to-have and nice-to-have requirements for our final solution.
-            To prioritize the requirements, we used a Feasibility-Scope matrix
-            to identify which requirements best address our problem. Feasibility
-            refers to how achievable it is for us to implement the solution for
-            a specific requirement in the final tool. Scope refers to the
-            correlation between the specific requirement and need identified by
-            challenges.
+           Make sure you record the feedback from the low-fidelity evalutations and iterate on your design accordingly. 
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -139,7 +112,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 25.png")}
+                src={require("../../assets/images/image 32.png")}
                 // className="w-full"
                 alt=""
               />
@@ -148,15 +121,11 @@ export default function DesignDev() {
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 5
               </div>
-              <div className="text-lg">Design and Develop</div>
+              <div className="text-lg">Implement med-fidelity protoypes</div>
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We designed and developed Remote.Ly using the MERN stack for its
-            software components. Remote.Ly is the one-stop-shop platform to help
-            novice hapticians get started on their haptics projects, learn from
-            the community of other novice or expert hapticians and identify
-            features to improve remote collaboration.
+           A medium-fidelity or medium-tech prototype has limited functionality but it has clickable areas that present the interactions and navigation possibilities of an application. Whereas, a high-fidelity prototype is a comprehensive and interactive prototype that is close to the final products with lots of functions, interactions and details. You can use Figma, Balsamiq and Mockplus to make medium-fidelity prototypes. 
           </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
@@ -166,7 +135,7 @@ export default function DesignDev() {
               style={{ border: "3px solid #5F2EEA" }}
             >
               <img
-                src={require("../../assets/images/image 26.png")}
+                src={require("../../assets/images/image 33.png")}
                 // className="w-full"
                 alt=""
               />
@@ -175,14 +144,11 @@ export default function DesignDev() {
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 6
               </div>
-              <div className="text-lg">Test and Launch</div>
+              <div className="text-lg">Evaluate med-fidelity prototypes</div>
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-            We conducted thorough design validation and verification testing for
-            Remote.Ly. We aim to promote Remote.Ly on a global scale in the near
-            future in order to help novice and expert hapticians across the
-            world!
+           Seek feedback on your medium-fidelity prototype from target users or experts in your solution area. Make sure you record the feedback and iterate on your design accordingly. 
           </p>
         </div>
            
