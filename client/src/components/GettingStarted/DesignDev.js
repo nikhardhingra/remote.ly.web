@@ -49,7 +49,6 @@ export default function DesignDev() {
                 alt=""
               />
             </div>
-            <br />
             <div className="text-below flex items-center">
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 2
@@ -60,7 +59,6 @@ export default function DesignDev() {
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
           Low-fidelity or low-tech prototype is a semi-finished prototype that focuses on function, structure, process. It provides the simplest framework and elements of the product. It can take the form of sketches, storyboards, gestures or 3D models. You can use MIRO, Figma or Visio as they have great templates to get you started. 
           </p>
-          <br />
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
@@ -83,8 +81,8 @@ export default function DesignDev() {
             </div>
           </div>
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
-          Seek feedback on your low-fidelity prototype from target users or users in the Remote.Ly community. Ensure you are going through ideas quickly and do not spend time implementing bad ideas.   </p><br />
-
+          Seek feedback on your low-fidelity prototype from target users or users in the Remote.Ly community. Ensure you are going through ideas quickly and do not spend time implementing bad ideas.
+          </p>
         </div>
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
@@ -98,7 +96,7 @@ export default function DesignDev() {
                 alt=""
               />
             </div>
-            <br />
+            
             <div className="text-below flex items-center">
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 4
@@ -109,8 +107,7 @@ export default function DesignDev() {
           <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
            Make sure you record the feedback from the low-fidelity evalutations and iterate on your design accordingly. 
           </p>
-          <br />
-        </div>
+          </div>
         
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
