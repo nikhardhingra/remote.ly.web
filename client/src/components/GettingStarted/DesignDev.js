@@ -49,6 +49,7 @@ export default function DesignDev() {
                 alt=""
               />
             </div>
+            <br />
             <div className="text-below flex items-center">
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 2
@@ -72,6 +73,7 @@ export default function DesignDev() {
                 alt=""
               />
             </div>
+            <br />
             <div className="text-below flex items-center">
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 3
@@ -94,6 +96,7 @@ export default function DesignDev() {
                 alt=""
               />
             </div>
+            <br />
             <div className="text-below flex items-center">
               <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
                 4
@@ -105,6 +108,7 @@ export default function DesignDev() {
            Make sure you record the feedback from the low-fidelity evalutations and iterate on your design accordingly. 
           </p>
         </div>
+        <br />
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
             <div
@@ -128,6 +132,8 @@ export default function DesignDev() {
            A medium-fidelity or medium-tech prototype has limited functionality but it has clickable areas that present the interactions and navigation possibilities of an application. Whereas, a high-fidelity prototype is a comprehensive and interactive prototype that is close to the final products with lots of functions, interactions and details. You can use Figma, Balsamiq and Mockplus to make medium-fidelity prototypes. 
           </p>
         </div>
+        <br />
+        
         <div className="grid grid-cols-5 m-12 items-center mt-3">
           <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
             <div
@@ -151,7 +157,7 @@ export default function DesignDev() {
            Seek feedback on your medium-fidelity prototype from target users or experts in your solution area. Make sure you record the feedback and iterate on your design accordingly. 
           </p>
         </div>
-           
+        <br />
           </div>
          
           <div className="flex items-end justify-between">
