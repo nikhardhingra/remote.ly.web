@@ -10,117 +10,184 @@ export default function DesignDev() {
         <Navbar isAuthenticated={true} />
         <div className="bg-gray-100 p-6 relative pb-16">
           <Timeline activeIndex={5} />
-          <h3 className="text-blue-600 text-3xl">Basic functions of Arduino</h3>
+          <h3 className="text-blue-600 text-3xl">Conceptual Design</h3>
           <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
-            Arduino is an open-source electronics platform that has been the
-            brain of thousands of projects, from everyday objects to complex
-            scientific instruments. Arduino was born at the Ivrea Interaction
-            Design Institute as an easy tool for fast prototyping, aimed at
-            students without a background in electronics and programming. As
-            soon as it reached a wider community, the Arduino board became
-            completely open-source, empowering users to build them independently
-            and eventually adapt them to their particular needs.
+            Conceptual design takes place in the early stages of the design process. Its purpose is to outline the form and function of the product / solution, and it incorporates the clients requirements into the design. This means that conceptual design must be done after requirements have been established. Conceptual design usually consists of sketches / drawings, illustrations, and sometimes 3D models.  At this stage, the designer is more concerned with exploring ideas using different methods rather than presenting detailed dimensions.
             <br />
-            <br />
-            Arduino is universally used for haptics projects because of its
-            simplicity and accessible user experience. Arduino boards are able
-            to read inputs - light on a sensor, a finger on a button, or a
-            Twitter message - and turn it into an output - activating a motor,
-            turning on an LED, publishing something online. The user can tell
-            the Arduino board what to do by sending a set of instructions to the
-            microcontroller on the board. Additionally, Arduino boards are
-            inexpensive, work on cross platforms such as Windows, Macintosh OSX
-            and Linux, and they have extensible hardware and software
-            components.
-            <br />
-            <br />
-            <b>Code Syntax snippets:</b>
-            <br />
-            <ul>
-              <li>
-                <u>Setup and loop</u>
-              </li>
-              <li>
-                <u>Button mouse control</u>
-              </li>
-              <li>
-                <u>Analog input</u>
-              </li>
-              <li>
-                <u>Array</u>
-              </li>
-              <li>
-                <u>For loop iteration</u>
-              </li>
-            </ul>
-            <br />
-            <b>
-              For more examples of code snippets of Arduino functions, please
-              visit:
-            </b>
-            <br />
-            <a
-              href="https://www.arduino.cc/en/Tutorial/BuiltInExamples"
-              target="_blank"
-              className="text-blue-500"
+          <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-12">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
             >
-              https://www.arduino.cc/en/Tutorial/BuiltInExamples
-            </a>
-            <br />
-            <b>For more information about Arduino, please visit:</b>
-            <br />
-            <a
-              href="https://www.arduino.cc/en/Tutorial/HomePage"
-              target="_blank"
-              className="text-blue-500"
+              <img
+                src={require("../../assets/images/image 21.png")}
+                // className="w-full"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                1
+              </div>
+              <div className="text-lg">Research on Haptics</div>
+            </div>
+          </div>
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We studied research papers written by several expert hapticians and
+            designers such as Professor Oliver Schneider. We learned about major
+            challenges faced by inexperienced designers and hapticians while
+            building projects. Some of the main challenges we found are:
+            <br /> 1. Novices tend to ignore many of the design choices such as
+            choosing appropriate haptic and graphic feedback or the right build
+            environment.
+            <br /> 2. Novices lack expertise in working with hardware, software,
+            conceptual design and evaluation.
+            <br /> 3. There is a lack of haptic hardware, methods to describe,
+            share and test ideas as well as minimal supporting documentation to
+            help novices.
+            <br /> 4. Lack of a tool makes it difficult to verify software setup
+            and seek feedback design ideas without in-person meetings.
+          </p>
+        </div>
+        <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
             >
-              https://www.arduino.cc/en/Tutorial/HomePage
-            </a>
+              <img
+                src={require("../../assets/images/image 22.png")}
+                // className="w-full"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                2
+              </div>
+              <div className="text-lg">Build Prototype</div>
+            </div>
           </div>
-          <h3 className="text-blue-600 text-3xl">
-            How can I install and setup Arduino?
-          </h3>
-          <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
-            Below are the steps to install Arduino:
-            <ul className="ml-4" style={{ listStyleType: "disc" }}>
-              <li>
-                Download from{" "}
-                <a
-                  target="_blank"
-                  className="text-blue-500"
-                  href="https://processing.org/download/"
-                >
-                  https://processing.org/download/
-                </a>
-              </li>
-              <li>
-                Reference the guide to ensure you are downloading the correct
-                Arduino Desktop IDE version for your OS (Windows, Linux or
-                MacOS)
-              </li>
-              <li>
-                Alternatively, you can use Arduino web editor to write code and
-                upload sketches to any official Arduino board from your web
-                browser
-              </li>
-              <li>Accept Terms and Conditions</li>
-              <li>Open 'Arduino' to begin</li>
-            </ul>
-          </div>
-          <h3 className="text-blue-600 text-3xl">
-            Sample projects using Processing
-          </h3>
-          <div className="text bg-white p-6 shadow-xl mb-6 mt-6 text-lg">
-            Refer to this link to learn about haptics projects built in Arduino:{" "}
-            <br />
-            <a
-              href="https://create.arduino.cc/projecthub"
-              target="_blank"
-              className="text-blue-500"
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We took the role of novice hapticians and designers ourselves. To
+            better understand the problem space and pain points, we built a
+            haptics prototype to feel the texture and coarseness of igneous
+            rocks.
+          </p>
+        </div>
+        <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
             >
-              https://create.arduino.cc/projecthub
-            </a>
+              <img
+                src={require("../../assets/images/image 24.png")}
+                className="w-52"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                3
+              </div>
+              <div className="text-lg">Document Challenges</div>
+            </div>
           </div>
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We logged challenges that we faced at every stage of prototyping
+            from assembling the Haply device, setting up software, to collecting
+            feedback and designing. This helped us to identify the challenges
+            that novice hapticians face while building haptics projects.
+          </p>
+        </div>
+        <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
+            >
+              <img
+                src={require("../../assets/images/image 23.png")}
+                // className="w-full"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                4
+              </div>
+              <div className="text-lg">Prioritize Requirements</div>
+            </div>
+          </div>
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We consolidated the challenges and translated them into must-have,
+            good-to-have and nice-to-have requirements for our final solution.
+            To prioritize the requirements, we used a Feasibility-Scope matrix
+            to identify which requirements best address our problem. Feasibility
+            refers to how achievable it is for us to implement the solution for
+            a specific requirement in the final tool. Scope refers to the
+            correlation between the specific requirement and need identified by
+            challenges.
+          </p>
+        </div>
+        <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
+            >
+              <img
+                src={require("../../assets/images/image 25.png")}
+                // className="w-full"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                5
+              </div>
+              <div className="text-lg">Design and Develop</div>
+            </div>
+          </div>
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We designed and developed Remote.Ly using the MERN stack for its
+            software components. Remote.Ly is the one-stop-shop platform to help
+            novice hapticians get started on their haptics projects, learn from
+            the community of other novice or expert hapticians and identify
+            features to improve remote collaboration.
+          </p>
+        </div>
+        <div className="grid grid-cols-5 m-12 items-center mt-3">
+          <div className="left mb-6 md:mb-0 w-56 h-56 mr-24">
+            <div
+              className="image-container bg-white p-6 flex justify-center items-center rounded-full"
+              style={{ border: "3px solid #5F2EEA" }}
+            >
+              <img
+                src={require("../../assets/images/image 26.png")}
+                // className="w-full"
+                alt=""
+              />
+            </div>
+            <div className="text-below flex items-center">
+              <div className="number mr-2 rounded-full w-5 h-5 p-4 bg-red-400 flex justify-center items-center text-white">
+                6
+              </div>
+              <div className="text-lg">Test and Launch</div>
+            </div>
+          </div>
+          <p className="my-6 col-span-4 bg-white border-purple-500 border rounded-lg p-6">
+            We conducted thorough design validation and verification testing for
+            Remote.Ly. We aim to promote Remote.Ly on a global scale in the near
+            future in order to help novice and expert hapticians across the
+            world!
+          </p>
+        </div>
+           
+          </div>
+         
           <div className="flex items-end justify-between">
             <Link
               to="/getting-started/wrap-up"
