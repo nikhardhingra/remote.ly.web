@@ -51,7 +51,10 @@ export default function WhatIsHaptics() {
 
             <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
             <p className="mt-2 text-2xl">
-            <b>Dexmo haptic glove</b> 
+            <a className="text-blue-500"
+            href="https://virtualrealitytimes.com/2020/02/23/top-5-haptic-vr-devices-set-to-launch-in-2020/"
+            target="_blank"><b>Dexmo haptic glove</b></a>
+            
             <br />           
              “The Dexmo haptic glove is an exoskeleton with a very refined and superior-looking design as well as functionality. The gloves are also completely wireless which makes them easy to use without being burdened with too much cabling.
 These gloves can track up to 11 degrees of freedom hand motion for each of the hands so they can capture the user’s full hand motion at full dexterity. This enables you to have a realistic finger presence in the virtual environment.” 
@@ -65,8 +68,10 @@ These gloves can track up to 11 degrees of freedom hand motion for each of the h
             </div>
 
             <div className="flex flex-col-reverse justify-center lg:flex-row items-center">
-            <p className="mt-2 text-2xl">
-            <b> HaptX Gloves </b> 
+            <p className="mt-2 text-2xl">    
+             <a className="text-blue-500"
+            href="https://www.youtube.com/watch?v=NJwFG0EoS7E&ab_channel=HaptX"
+            target="_blank"> <b> HaptX Gloves </b> </a>
             <br />           
 “HaptX Gloves DK2 feature the industry's most powerful force feedback with 133 points of tactile feedback per hand, for full palm and fingertip coverage. Whether you’re training your workforce, designing a new product, or controlling robots from a distance, HaptX Gloves make it feel rea.l”               <br />
               <br />
