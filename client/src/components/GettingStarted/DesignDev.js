@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import Timeline from "./Timeline";
 
-export default function ConfigureArduino() {
+export default function DesignDev() {
   return (
     <div>
       <div>
@@ -123,7 +123,7 @@ export default function ConfigureArduino() {
           </div>
           <div className="flex items-end justify-between">
             <Link
-              to="/getting-started/design-dev"
+              to="/getting-started/wrap-up"
               className="fixed bottom-4 left-1/2"
               style={{
                 transform: "translateX(-50%)",

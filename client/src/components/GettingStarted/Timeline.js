@@ -34,6 +34,12 @@ const Timeline = ({ activeIndex }) => {
       active: false,
       now: false,
     },
+     {
+      name: "Design and Development",
+      link: "/getting-started/design-dev",
+      active: false,
+      now: false,
+    },
   ]);
   useEffect(() => {
     console.log("useeffect");
