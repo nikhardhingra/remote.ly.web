@@ -12,10 +12,10 @@ export default function LearnFromExperts() {
       />
       <div className="text-center">
         <h1 className="text-4xl italic" style={{ color: "#091133" }}>
-          Learn from experts
+         Features
         </h1>
         <p className="mt-8 text-xl">
-          Ask experts questions and get feedback on your projects.
+         Create your profile as a novice or expert haptician and customize it by adding your haptics-related projects and skills to share with the rest of the haptics community.
         </p>
       </div>
     </div>
