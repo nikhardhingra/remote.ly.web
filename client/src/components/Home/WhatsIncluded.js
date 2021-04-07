@@ -2,6 +2,7 @@ import React from "react";
 import WhatIsHapticsImage from "../../assets/images/Rectangle 474.png";
 import LearnFromExperts from "./LearnFromExperts";
 import GetStarted from "./GetStarted";
+import Connectwithhapticians from "./Connectwithhapticians"
 
 export default function WhatIsHaptics() {
   return (
@@ -14,6 +15,7 @@ export default function WhatIsHaptics() {
       </h1>
       <LearnFromExperts />
       <GetStarted />
+      <Connectwithhapticians/>
     </div>
   );
 }
